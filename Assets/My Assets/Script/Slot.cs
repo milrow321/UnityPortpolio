@@ -31,7 +31,7 @@ public class Slot : MonoBehaviour
         }
         else
         {
-            text_Count.text = 0;
+            text_Count.text = "0";
         }
         SetColor(1);
     }
