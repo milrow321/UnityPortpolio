@@ -8,15 +8,21 @@ public class Slot : MonoBehaviour
     public Item item;
     public int itemCount;
     public Image itemImage;
+    
 
     [SerializeField]
     private Text text_Count;
+
+    [SerializeField]
+    private GameObject slot;
 
     private void SetColor(float _alpha)
     {
         Color color = itemImage.color;
         color.a = _alpha;
+        
         itemImage.color = color;
+        
     }
 
     public void AddItem(Item _item,int _count =1)
@@ -27,6 +33,7 @@ public class Slot : MonoBehaviour
 
         if (item.itemType != Item.ItemType.COOKER)
         {
+            slot.SetActive(true);
             text_Count.text = itemCount.ToString();
         }
         else
@@ -54,6 +61,7 @@ public class Slot : MonoBehaviour
         itemImage.sprite = null;
         SetColor(0);
 
+        slot.SetActive(false);
         text_Count.text = "0";
     }
 

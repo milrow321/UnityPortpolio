@@ -2163,7 +2163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4694350218193332, guid: 16ecce9cc728dbf4284b95589f19b796, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4694350218193332, guid: 16ecce9cc728dbf4284b95589f19b796, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3146,6 +3146,13 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 17c2904994f064d4dbd0112a75cb99b0, type: 2}
     m_RemovedComponents:
     - {fileID: 5880993083672605411, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
+    - {fileID: 5709764188677267537, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
+    - {fileID: 1137264742051650203, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
+    - {fileID: 6407217885039774347, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
+    - {fileID: 9207578892601756103, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
+    - {fileID: 8979437991576770543, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
+    - {fileID: 9033291424251931268, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
+    - {fileID: 5531021256699799653, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b589dedcc448e841b5f3b2320d38030, type: 3}
 --- !u!4 &1509904035 stripped
 Transform:
