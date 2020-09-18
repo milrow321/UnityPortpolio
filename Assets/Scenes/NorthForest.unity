@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.34366
@@ -187,9 +195,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093577914464490, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_Name
       value: tree_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244885105455798, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834748535681010, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,9 +268,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -389,9 +421,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1005825142485488, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_Name
       value: Fence2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4602302334990562, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,9 +486,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -759,6 +807,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.559998
@@ -831,6 +887,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence5 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.539993
@@ -887,6 +951,10 @@ PrefabInstance:
     - target: {fileID: 1646596920117602, guid: 2e2ed77b6686b13478c958cacf9a77c3, type: 3}
       propertyPath: m_Name
       value: FantasyHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646596920117602, guid: 2e2ed77b6686b13478c958cacf9a77c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4266714643848270, guid: 2e2ed77b6686b13478c958cacf9a77c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1014,6 +1082,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.929993
@@ -1077,9 +1153,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1400421313879838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_Name
       value: Fence3 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4638605969397568, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1134,9 +1218,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1005825142485488, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_Name
       value: Fence2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4602302334990562, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1200,6 +1292,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.58000183
@@ -1253,9 +1353,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1318,6 +1426,14 @@ PrefabInstance:
     - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_Name
       value: Fence5 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1391,6 +1507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medieval_house
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6d261572b8dfb574888f3be9287f022b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d261572b8dfb574888f3be9287f022b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 150.7
@@ -1451,7 +1571,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &584068919
 Transform:
@@ -1517,9 +1637,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1578,6 +1706,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.9900055
@@ -1634,6 +1770,14 @@ PrefabInstance:
     - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_Name
       value: Fence5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1693,9 +1837,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1400421313879838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_Name
       value: Fence3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4638605969397568, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1833,6 +1985,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.3799896
@@ -1890,6 +2050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: well
       objectReference: {fileID: 0}
+    - target: {fileID: 1298568534607994, guid: 196e176e4da73bf449dba8cd3bb4a986, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4376858769262882, guid: 196e176e4da73bf449dba8cd3bb4a986, type: 3}
       propertyPath: m_LocalPosition.x
       value: 178
@@ -1946,6 +2110,14 @@ PrefabInstance:
     - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_Name
       value: Fence5 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2015,9 +2187,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2076,6 +2256,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.600006
@@ -2133,6 +2321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table
       objectReference: {fileID: 0}
+    - target: {fileID: 1900882717790826, guid: 16ecce9cc728dbf4284b95589f19b796, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4694350218193332, guid: 16ecce9cc728dbf4284b95589f19b796, type: 3}
       propertyPath: m_LocalPosition.x
       value: 167.06
@@ -2189,6 +2381,14 @@ PrefabInstance:
     - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_Name
       value: Fence5 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2258,9 +2458,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1400421313879838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_Name
       value: Fence3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4638605969397568, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2318,6 +2526,14 @@ PrefabInstance:
     - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_Name
       value: Fence5 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2387,9 +2603,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2454,9 +2678,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 144872, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 162300, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 165674, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 173098, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 181858, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
       propertyPath: m_Name
       value: Medieva_fantasy_house
+      objectReference: {fileID: 0}
+    - target: {fileID: 181858, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 181868, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 185950, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 448664, guid: fa86bdd10121aaa4aa0fc586f29bea18, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2511,9 +2763,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2568,9 +2828,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1400421313879838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_Name
       value: Fence3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4638605969397568, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2700,9 +2968,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2766,6 +3042,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.58812
@@ -2822,6 +3106,10 @@ PrefabInstance:
     - target: {fileID: 141948, guid: d5c7fd34c77e1684490361e29a48b555, type: 3}
       propertyPath: m_Name
       value: mushroom_house
+      objectReference: {fileID: 0}
+    - target: {fileID: 141948, guid: d5c7fd34c77e1684490361e29a48b555, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 402762, guid: d5c7fd34c77e1684490361e29a48b555, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2888,9 +3176,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2949,9 +3245,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1005825142485488, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_Name
       value: Fence2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4602302334990562, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3006,9 +3310,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1005825142485488, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_Name
       value: Fence2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4222957642335928, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3319,9 +3631,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1400421313879838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_Name
       value: Fence3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4638605969397568, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3388,6 +3708,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence5 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.339996
@@ -3444,6 +3772,14 @@ PrefabInstance:
     - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_Name
       value: Fence4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3507,6 +3843,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence5 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.940002
@@ -3564,6 +3908,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence5 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1513424315093700, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645131107134952, guid: 43a17864c509699478646582a6a377c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4642225464754292, guid: 43a17864c509699478646582a6a377c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.49196
@@ -3620,6 +3972,14 @@ PrefabInstance:
     - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_Name
       value: Fence4 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3694,9 +4054,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3751,9 +4119,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1005825142485488, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_Name
       value: Fence2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432539168461802, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4602302334990562, guid: 135ba6f8587f905418f573a1b2380169, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3822,6 +4198,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.449997
@@ -3875,9 +4259,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1299019529265372, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_Name
       value: Fence1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431210908605580, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3940,6 +4332,10 @@ PrefabInstance:
     - target: {fileID: 1504942241423840, guid: b8cb952614600b544b502cdcb6cd29c0, type: 3}
       propertyPath: m_Name
       value: Witchs_house
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504942241423840, guid: b8cb952614600b544b502cdcb6cd29c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4449949211273638, guid: b8cb952614600b544b502cdcb6cd29c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4006,9 +4402,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584068919}
     m_Modifications:
+    - target: {fileID: 1400421313879838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_Name
       value: Fence3 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614641577322838, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4638605969397568, guid: 3ff55326860ccdc4db0504550148e994, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4071,6 +4475,14 @@ PrefabInstance:
     - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_Name
       value: Fence4 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314193541681366, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869296035114156, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4901207133156940, guid: 361e3d5cdb2eadb43a7e7bacd9accd86, type: 3}
       propertyPath: m_LocalPosition.x
