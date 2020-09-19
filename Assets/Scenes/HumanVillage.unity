@@ -201,6 +201,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4033841299429842, guid: 5db3cfd9582ce5943ac05c7b12d6de27, type: 3}
   m_PrefabInstance: {fileID: 36595795}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &44967637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44967638}
+  m_Layer: 0
+  m_Name: Item Buffer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &44967638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44967637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 56.031303, y: 25.613026, z: 32.31402}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73239963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Query-Chan-SD
       objectReference: {fileID: 0}
+    - target: {fileID: 164916, guid: ed5a181593a2a401aa30a8480e084370, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 464916, guid: ed5a181593a2a401aa30a8480e084370, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.811577
@@ -1433,15 +1467,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464916, guid: ed5a181593a2a401aa30a8480e084370, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 464916, guid: ed5a181593a2a401aa30a8480e084370, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 464916, guid: ed5a181593a2a401aa30a8480e084370, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed5a181593a2a401aa30a8480e084370, type: 3}
@@ -2325,7 +2359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6008831093401759056, guid: 0091075ea7b5a3d45824578dff918382, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.3125
+      value: 0.31249994
       objectReference: {fileID: 0}
     - target: {fileID: 6008831093773036939, guid: 0091075ea7b5a3d45824578dff918382, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3489,6 +3523,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1135340138425192, guid: 446c50f18dcf54a6f8feb4113c421b9e, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 4394999233794970, guid: 446c50f18dcf54a6f8feb4113c421b9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.606728
@@ -3894,6 +3932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Query-Chan-SD_Kanagawa
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013404843354, guid: 76ee212d2948d4d46bc5dfb863029bf3, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010483104106, guid: 76ee212d2948d4d46bc5dfb863029bf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.80158
@@ -3940,15 +3982,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010483104106, guid: 76ee212d2948d4d46bc5dfb863029bf3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000010483104106, guid: 76ee212d2948d4d46bc5dfb863029bf3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000010483104106, guid: 76ee212d2948d4d46bc5dfb863029bf3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ee212d2948d4d46bc5dfb863029bf3, type: 3}
@@ -4892,6 +4934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Query-Chan-SD_Akita
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012674550932, guid: 629b7596b00f3b147b944525c845c66a, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012874185380, guid: 629b7596b00f3b147b944525c845c66a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.531578
@@ -4938,15 +4984,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012874185380, guid: 629b7596b00f3b147b944525c845c66a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000012874185380, guid: 629b7596b00f3b147b944525c845c66a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000012874185380, guid: 629b7596b00f3b147b944525c845c66a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 629b7596b00f3b147b944525c845c66a, type: 3}
@@ -5358,6 +5404,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066845697}
   m_CullTransparentMesh: 0
+--- !u!1 &1096870022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000010947671070, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
+  m_PrefabInstance: {fileID: 1870572894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1096870027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096870022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &1118335552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6613,6 +6677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Query-Chan-SD_Kagoshima
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012295906164, guid: aafef18d1ce750144a6038c09cab6755, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010013168128, guid: aafef18d1ce750144a6038c09cab6755, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.581577
@@ -6659,15 +6727,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010013168128, guid: aafef18d1ce750144a6038c09cab6755, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000010013168128, guid: aafef18d1ce750144a6038c09cab6755, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000010013168128, guid: aafef18d1ce750144a6038c09cab6755, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aafef18d1ce750144a6038c09cab6755, type: 3}
@@ -8052,6 +8120,7 @@ GameObject:
   - component: {fileID: 1675202270}
   - component: {fileID: 1675202269}
   - component: {fileID: 1675202268}
+  - component: {fileID: 1675202271}
   m_Layer: 0
   m_Name: PlayerBox
   m_TagString: Untagged
@@ -8116,6 +8185,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1675202271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675202267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef4d7c8df5382a489132ed639dc5c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 0}
+  coummucation_Ani: {fileID: 0}
+  camera: {fileID: 2106959929}
+  ShopUI: {fileID: 647239295}
 --- !u!1 &1683599615
 GameObject:
   m_ObjectHideFlags: 0
@@ -8839,6 +8924,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Query-Chan-SD_Spain_Madrid
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010947671070, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011207596116, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013098398030, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010533677328, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.901579
@@ -8885,15 +8982,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010533677328, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000010533677328, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000010533677328, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9f15a10c355e64687dcb38d98f8efd, type: 3}
@@ -9063,6 +9160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Query-Chan-SD_Hokkaido
       objectReference: {fileID: 0}
+    - target: {fileID: 146616, guid: eabaa266a156a48e9bcea1ff39f31eae, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 446616, guid: eabaa266a156a48e9bcea1ff39f31eae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.098419
@@ -9109,15 +9210,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446616, guid: eabaa266a156a48e9bcea1ff39f31eae, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 446616, guid: eabaa266a156a48e9bcea1ff39f31eae, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 446616, guid: eabaa266a156a48e9bcea1ff39f31eae, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eabaa266a156a48e9bcea1ff39f31eae, type: 3}
@@ -9216,6 +9317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Query-Chan-SD_Gifu
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011524424036, guid: c5c50e6d5d639fb4b841517331de6d00, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011290261656, guid: c5c50e6d5d639fb4b841517331de6d00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.701576
@@ -9262,15 +9367,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011290261656, guid: c5c50e6d5d639fb4b841517331de6d00, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000011290261656, guid: c5c50e6d5d639fb4b841517331de6d00, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000011290261656, guid: c5c50e6d5d639fb4b841517331de6d00, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c50e6d5d639fb4b841517331de6d00, type: 3}
