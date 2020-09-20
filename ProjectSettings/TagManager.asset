@@ -7,6 +7,8 @@ TagManager:
   - SpringBoneEnd
   - SpringBone
   - NPC
+  - Slot
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Item
   - 
   - 
   - 

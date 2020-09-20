@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5f1da9605a90040836c508b1ce9a3e, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: "\uC0AC\uACFC"
+  itemDescription: "\uC2F1\uC2F1\uD55C \uC8FC\uD64D\uBE5B \uC0AC\uACFC\uC785\uB2C8\uB2E4"
   itemType: 1
   itemImage: {fileID: 21300000, guid: 2aa6ab62866ce4439ab7303f7da55e51, type: 3}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 100000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
+  grade: 0
   weaponType: 

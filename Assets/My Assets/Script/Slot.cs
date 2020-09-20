@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler,IEndDragHandler,IDropHandler
 {
+    private Vector3 originPos;
+
     public Item item;
     public int itemCount;
     public Image itemImage;
@@ -15,6 +18,12 @@ public class Slot : MonoBehaviour
 
     [SerializeField]
     private GameObject slot;
+
+
+    void Start()
+    {
+        originPos = transform.position;
+    }
 
     private void SetColor(float _alpha)
     {
@@ -65,4 +74,57 @@ public class Slot : MonoBehaviour
         text_Count.text = "0";
     }
 
+    public void SetItem(Item _item, int _count = 1)
+    {
+        item = _item;
+        itemCount = _count;
+        itemImage.sprite = item.itemImage;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            if (item != null)
+            {
+                if (item.itemType == Item.ItemType.INGREDIENT)
+                {
+                    SetSlotCount(-1);
+
+                }
+            }
+            else
+            {
+                
+            }
+        }
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (item != null)
+        {
+
+            transform.position = eventData.position;
+        }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (item != null)
+        {
+
+            transform.position = eventData.position;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        transform.position = originPos;
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        
+    }
 }
