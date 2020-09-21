@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ItemBuffer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField]
+    public Item item;
+
+
+    private List<Slot> slots;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void addItem(Slot _slot)
+    { 
     }
 }
