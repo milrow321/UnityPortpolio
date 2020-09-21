@@ -25,27 +25,10 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TryOpenInventory();
+       
             
     }
-    private void TryOpenInventory()
-    {
-        invetoryActivate = !invetoryActivate;
-
-        if (invetoryActivate) OnenInventory();
-        else CloseInventory();
-    }
-
-    private void OnenInventory()
-    {
-        go_InventoryBase.SetActive(true);
-    }
-
-    private void CloseInventory()
-    {
-        go_InventoryBase.SetActive(false);  
-    }
-
+   
     public void AcquireItem(Item _item, int _count=1)
     {
         if(Item.ItemType.COOKER!=_item.itemType)

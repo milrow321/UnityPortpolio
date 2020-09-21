@@ -6,23 +6,24 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler,IEndDragHandler,IDropHandler
 {
-    private Vector3 originPos;
+    //private Vector3 originPos;
+   
 
     public Item item;
     public int itemCount;
     public Image itemImage;
     
 
+
     [SerializeField]
     private Text text_Count;
 
-    [SerializeField]
-    private GameObject slot;
+    
 
 
     void Start()
     {
-        originPos = transform.position;
+        
     }
 
     private void SetColor(float _alpha)
@@ -42,7 +43,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
         if (item.itemType != Item.ItemType.COOKER)
         {
-            slot.SetActive(true);
+           
             text_Count.text = itemCount.ToString();
         }
         else
@@ -70,7 +71,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         itemImage.sprite = null;
         SetColor(0);
 
-        slot.SetActive(false);
+        
         text_Count.text = "0";
     }
 
@@ -104,8 +105,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
     {
         if (item != null)
         {
+            DragSlot.instance.dragSlot = this;
+            DragSlot.instance.DragSetImage(itemImage);
 
-            transform.position = eventData.position;
+           DragSlot.instance.transform.position = eventData.position;
         }
     }
 
@@ -114,13 +117,14 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         if (item != null)
         {
 
-            transform.position = eventData.position;
+            DragSlot.instance.transform.position = eventData.position;
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.position = originPos;
+        DragSlot.instance.SetColor(0);
+        DragSlot.instance.dragSlot = null;
     }
 
     public void OnDrop(PointerEventData eventData)
