@@ -6,20 +6,33 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    public GameObject slot;
+    public Image icon;
+   // public Text itemName_Text;
+    public Text itemCount_Text;
 
-    public int itemCount;
-    public Sprite itemImage;
+    //public GameObject slot;
 
-    [SerializeField]
-    public Item item;
+    //public int itemCount;
 
 
-    // Start is called before the first frame update
-    void Start()
+    public void Additem(Item _item)
     {
-        itemImage = item.itemImage;
+        //itemName_Text.text = _item.itemName;
+        icon.sprite = _item.itemImage;
+        if (Item.ItemType.INGREDIENT==_item.itemType)
+        {
+            if (_item.itemCount > 0) itemCount_Text.text = _item.itemCount.ToString();
+            else itemCount_Text.text = "0";
+        }
     }
+
+    public void RemoveItem()
+    {
+       // itemName_Text.text = "";
+        itemCount_Text.text = "";
+        icon.sprite = null;
+    }
+   
 
     
 }

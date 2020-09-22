@@ -42,7 +42,7 @@ public class ActionController : MonoBehaviour
     private void CheckItem()
     {
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
-        theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
+
         if (Physics.Raycast(camera.ScreenPointToRay(mousePos), out hitInfo, range, layerMask))
         {
             if (hitInfo.transform.tag == "Item")

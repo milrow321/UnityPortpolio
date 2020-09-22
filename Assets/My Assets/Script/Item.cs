@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName= "New Item", menuName= "New Item/item")]
-public class Item : ScriptableObject
+[System.Serializable]
+public class Item 
 {
 
-    //public int itemId;
+
+    public string itemImageName;
     public string itemName;
     public string itemDescription;
-    public ItemType itemType;
+    public int itemCount;
     public Sprite itemImage;
+    
+    public ItemType itemType;
+    
     public GameObject itemPrefab;
     public int grade;
 
@@ -23,11 +27,20 @@ public class Item : ScriptableObject
         SEASONING, //설탕 등의 조미료
         COOKER, //요리 기구
         FURNITURE,//가게 내의 가구 아이템
-        INTERIAL, //인테리어 아이템(벽지, 바닥)
+        EQUIPMENT,//장비류
+        USE,//소모품
         SPECIAL, //특별 아이템(퀘스트 아이템 등)
         ECT
     }
 
-
+    public Item(string _itemImageName, string _itemName, string _itemDes, ItemType _itemType, int _itemCount=1)
+    {
+        itemImageName = _itemImageName;
+        itemName = _itemName;
+        itemDescription = _itemDes;
+        itemType = _itemType;
+        itemCount = _itemCount;
+        itemImage = Resources.Load("Food icons Pack/PNG/"+_itemImageName, typeof(Sprite))as Sprite;
+    }
 
 }

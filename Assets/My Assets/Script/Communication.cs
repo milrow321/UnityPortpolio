@@ -30,8 +30,8 @@ public class Communication : MonoBehaviour
 
     void Talk()
     {
-        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
-        if (Physics.Raycast(camera.ScreenPointToRay(mousePos), out hitInfo));
+        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+        if (Physics.Raycast(camera.ScreenPointToRay(mousePos), out hitInfo))
         {
             if (hitInfo.transform.CompareTag("NPC"))
             {
