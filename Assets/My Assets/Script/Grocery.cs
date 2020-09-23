@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class Grocery : MonoBehaviour
 {
+    
+
     public Transform slotRoot;
     public GameObject purchasePanel;
     
-    private List<Slot> slots;
+    private List<Item> productList;
 
 
     Camera camera;
@@ -16,18 +18,18 @@ public class Grocery : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slots = new List<Slot>();
+        //slots = new List<Slot>();
 
-        int slotCount = slotRoot.childCount;
+        //int slotCount = slotRoot.childCount;
 
-        for (int i = 0; i < slotCount; i++)
-        {
-            var slot = slotRoot.GetChild(i).GetComponent<Slot>();
+        //for (int i = 0; i < slotCount; i++)
+        //{
+        //    var slot = slotRoot.GetChild(i).GetComponent<Slot>();
 
-            slots.Add(slot);
-        }
+        //    slots.Add(slot);
+        //}
 
-        purchasePanel = GetComponentInChildren<GameObject>();
+        //purchasePanel = GetComponentInChildren<GameObject>();
     }
 
 

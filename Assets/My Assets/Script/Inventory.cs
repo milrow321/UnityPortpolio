@@ -52,6 +52,9 @@ public class Inventory : MonoBehaviour
         inventoryItemList.Add(new Item("cherry", "체리", "탱탱한 체리", Item.ItemType.INGREDIENT));
         inventoryItemList.Add(new Item("grapes", "포도", "보라빛의 포도", Item.ItemType.INGREDIENT));
 
+        inventoryItemList.Add(new Item("w_047", "바람의 대검", "바람의 기운을 담은 대검", Item.ItemType.EQUIPMENT));
+
+
         Color color = slots[0].icon.GetComponent<Image>().color;
         color.a = 1f;
 
@@ -69,21 +72,25 @@ public class Inventory : MonoBehaviour
     public void SelectTab(int _selectTab)
     {
         selectedTab = _selectTab;
-        
-            
-            
-            
-         
+        ShowItem();
+    }
+
+    public void RemoveSlot()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].RemoveItem();
+            slots[i].gameObject.SetActive(false);
+
+        }
 
     }
 
-    
 
-
-public void ShowItem()
+    public void ShowItem()
     {
         inventoryTabList.Clear();
-        
+        RemoveSlot();
         selectedItem = 0;
 
         switch (selectedTab)
@@ -93,7 +100,7 @@ public void ShowItem()
                 {
                     if (Item.ItemType.INGREDIENT == inventoryItemList[i].itemType)
                     {
-                        inventoryTabList.Add(inventoryTabList[i]);
+                        inventoryTabList.Add(inventoryItemList[i]);
                         
                     }
                 }
@@ -103,7 +110,7 @@ public void ShowItem()
                 {
                     if (Item.ItemType.EQUIPMENT == inventoryItemList[i].itemType)
                     {
-                        inventoryTabList.Add(inventoryTabList[i]);
+                        inventoryTabList.Add(inventoryItemList[i]);
                         
                     }
                 }
@@ -113,13 +120,18 @@ public void ShowItem()
                 {
                     if (Item.ItemType.USE == inventoryItemList[i].itemType)
                     {
-                        inventoryTabList.Add(inventoryTabList[i]);
+                        inventoryTabList.Add(inventoryItemList[i]);
                         
                     }
                 }
                 break;
         }
 
+        for(int i=0;i<inventoryTabList.Count;i++)
+        {
+            slots[i].gameObject.SetActive(true);
+            slots[i].Additem(inventoryTabList[i]);
+        }
        
     }
 
@@ -130,8 +142,8 @@ public void ShowItem()
     // Update is called once per frame
     void Update()
     {
-        
 
+       
 
     }
 

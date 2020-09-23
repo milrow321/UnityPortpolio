@@ -7,7 +7,7 @@ public class DragSlot : MonoBehaviour
 {
     static public DragSlot instance;
 
-    public Slot dragSlot;
+    public ItemSlot dragSlot;
 
     [SerializeField]
     private Image imageItem;
@@ -27,5 +27,10 @@ public class DragSlot : MonoBehaviour
         Color color = imageItem.color;
         color.a = _alpha;
         imageItem.color = color;
+    }
+
+    public void SetScale(float _scale)
+    {
+  
     }
 }
