@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class Kitchen : MonoBehaviour
 {
+    static public Kitchen instance;
 
+    [SerializeField]
+    private List<Item> mixSlotList;
 
-
-    public List<ItemSlot> ingredients;
-
-
-    public void AddIngredient()
+    private void Start()
     {
-        ingredients.Add(DragSlot.instance.dragSlot);
-
-
+        instance = this;
+        mixSlotList = new List<Item>();
     }
 
-    public void Cook()
+    public void AddDragSlotItem(Item _item)
     {
-        for (int i = 0; i < ingredients.Count; i++)
-        {
-            
-        }
+        mixSlotList.Add(_item);
     }
 
-    public void Erase()
+    private void Cook()
+    {
+        
+    }
+
+    private void Erase()
     {
     }
 }

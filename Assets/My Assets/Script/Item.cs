@@ -43,4 +43,5 @@ public class Item
         itemImage = Resources.Load("Food icons Pack/PNG/"+_itemImageName, typeof(Sprite))as Sprite;
     }
 
+   
 }

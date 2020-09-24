@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class DragSlot : MonoBehaviour
 {
@@ -9,12 +10,20 @@ public class DragSlot : MonoBehaviour
 
     public ItemSlot dragSlot;
 
+   
+
     [SerializeField]
-    private Image imageItem;
+    public Image imageItem;
+
+    [SerializeField]
+    private Item item;
+
+    
 
     private void Start()
     {
         instance = this;
+        
     }
 
     public void DragSetImage(Image _itemImage)
@@ -33,4 +42,7 @@ public class DragSlot : MonoBehaviour
     {
   
     }
+
+    
+
 }
