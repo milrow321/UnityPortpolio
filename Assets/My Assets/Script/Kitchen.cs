@@ -9,10 +9,23 @@ public class Kitchen : MonoBehaviour
     [SerializeField]
     private List<Item> mixSlotList;
 
+    public Dictionary<List<Item>, string> recipeBook;
+
+    private List<Item> recipe;
+
     private void Start()
     {
         instance = this;
         mixSlotList = new List<Item>();
+
+        recipeBook = new Dictionary<List<Item>, string>();
+        recipe = new List<Item>();
+
+        recipe.Add(new Item("apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
+        recipe.Add(new Item("water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        recipeBook.Add(recipe, "사과주스");
+        recipe.Clear();
+        
     }
 
     public void AddDragSlotItem(Item _item)
@@ -20,12 +33,18 @@ public class Kitchen : MonoBehaviour
         mixSlotList.Add(_item);
     }
 
-    private void Cook()
+    public void Cook()
     {
+        string rec;
+        if (recipeBook.TryGetValue(mixSlotList, out rec))
+        {
+            Debug.Log(rec);
+        }
         
     }
 
-    private void Erase()
+    public void Erase()
     {
+        mixSlotList.Clear();
     }
 }
