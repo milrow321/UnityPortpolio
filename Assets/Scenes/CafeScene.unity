@@ -3243,6 +3243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixSlotList: []
+  mixSlot: []
+  tf: {fileID: 1966628207}
 --- !u!1 &791857553
 GameObject:
   m_ObjectHideFlags: 0
@@ -8699,7 +8701,8 @@ MonoBehaviour:
   switch_name: []
   switches: 
   itemList:
-  - itemImageName: 
+  - itemID: 0
+    itemImageName: 
     itemName: 
     itemDescription: 
     itemCount: 0
@@ -8708,7 +8711,8 @@ MonoBehaviour:
     itemPrefab: {fileID: 0}
     grade: 0
     weaponType: 
-  - itemImageName: 
+  - itemID: 0
+    itemImageName: 
     itemName: 
     itemDescription: 
     itemCount: 0
@@ -8717,7 +8721,8 @@ MonoBehaviour:
     itemPrefab: {fileID: 0}
     grade: 0
     weaponType: 
-  - itemImageName: 
+  - itemID: 0
+    itemImageName: 
     itemName: 
     itemDescription: 
     itemCount: 0
@@ -8726,7 +8731,8 @@ MonoBehaviour:
     itemPrefab: {fileID: 0}
     grade: 0
     weaponType: 
-  - itemImageName: 
+  - itemID: 0
+    itemImageName: 
     itemName: 
     itemDescription: 
     itemCount: 0
@@ -9488,6 +9494,7 @@ MonoBehaviour:
   dragSlot: {fileID: 0}
   imageItem: {fileID: 2117846504}
   item:
+    itemID: 0
     itemImageName: 
     itemName: 
     itemDescription: 

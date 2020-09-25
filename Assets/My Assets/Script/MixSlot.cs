@@ -24,10 +24,8 @@ public class MixSlot : MonoBehaviour
     {
         icon.sprite = _itemImage.sprite;
     }
-    public void addSlotList()
+   public void DeleteImage()
     {
-        
+        icon.sprite = null;
     }
-
-    
 }

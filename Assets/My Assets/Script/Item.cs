@@ -6,7 +6,7 @@ using UnityEngine;
 public class Item 
 {
 
-
+    public int itemID;
     public string itemImageName;
     public string itemName;
     public string itemDescription;
@@ -33,8 +33,9 @@ public class Item
         ECT
     }
 
-    public Item(string _itemImageName, string _itemName, string _itemDes, ItemType _itemType, int _itemCount=1)
+    public Item(int _itemID, string _itemImageName, string _itemName, string _itemDes, ItemType _itemType, int _itemCount=1)
     {
+        itemID = _itemID;
         itemImageName = _itemImageName;
         itemName = _itemName;
         itemDescription = _itemDes;

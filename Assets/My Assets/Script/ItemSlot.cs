@@ -16,19 +16,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
 
     //public int itemCount;
 
-    private MixSlot[] mixSlot;
 
     
 
 
+
     private Item item;
 
-    public Transform tf;
+    
 
 
     private void Start()
     {
-        mixSlot = tf.GetComponentsInChildren<MixSlot>();
+        
         
         count = 0;
     }
@@ -55,6 +55,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
         itemCount_Text.text = "";
         icon.sprite = null;
     }
+
+   
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -87,10 +89,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
 
         
 
-        if (count < mixSlot.Length)
+        if (count < Kitchen.instance.mixSlot.Length)
         {
             Kitchen.instance.AddDragSlotItem(DragSlot.instance.dragSlot.item);
-            mixSlot[count].MixSetImage(icon);
+            Kitchen.instance.mixSlot[count].MixSetImage(icon);
             count++;
         }
         else
