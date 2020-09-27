@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    static int count;
+    
 
     public Image icon;
    // public Text itemName_Text;
@@ -30,7 +30,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
     {
         
         
-        count = 0;
+        
     }
 
 
@@ -87,13 +87,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
     {
 
 
-        
 
-        if (count < Kitchen.instance.mixSlot.Length)
+        
+        if (Kitchen.instance.count < Kitchen.instance.mixSlot.Length)
         {
             Kitchen.instance.AddDragSlotItem(DragSlot.instance.dragSlot.item);
-            Kitchen.instance.mixSlot[count].MixSetImage(icon);
-            count++;
+            Kitchen.instance.mixSlot[Kitchen.instance.count].MixSetImage(icon);
+            Kitchen.instance.count++;
         }
         else
         {

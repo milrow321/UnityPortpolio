@@ -25,6 +25,7 @@ public class Item
         DISH, //식기류
         INGREDIENT, //음식 재료
         SEASONING, //설탕 등의 조미료
+        FOOD,//요리
         COOKER, //요리 기구
         FURNITURE,//가게 내의 가구 아이템
         EQUIPMENT,//장비류
