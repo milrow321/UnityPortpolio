@@ -26,6 +26,8 @@ public class DatabaseManager : MonoBehaviour
     public bool[] switches;
 
     public List<Item> itemList = new List<Item>();
+    public Dictionary<int, Item> foodItemDictionary = new Dictionary<int, Item>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +39,12 @@ public class DatabaseManager : MonoBehaviour
         itemList.Add(new Item(00100,"water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
         itemList.Add(new Item(00101,"milk", "우유", "뼈가 튼튼해지는 우유", Item.ItemType.INGREDIENT));
 
-        itemList.Add(new Item(01000, "vine", "사과주스", "주스입니다", Item.ItemType.FOOD));
+        foodItemDictionary.Add(01000, new Item(01000, "vine", "사과주스", "주스입니다", Item.ItemType.FOOD));
+        //itemList.Add(new Item(01000, "vine", "사과주스", "주스입니다", Item.ItemType.FOOD));
 
         itemList.Add(new Item(10003,"w_047", "바람의 대검", "바람의 기운을 담은 대검", Item.ItemType.EQUIPMENT));
     }
 
+    
    
 }
