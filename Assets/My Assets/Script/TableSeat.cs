@@ -11,6 +11,7 @@ public class TableSeat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        go = this.gameObject;
        tf= go.GetComponentsInChildren<Transform>();
         isOccupied = false;
     }

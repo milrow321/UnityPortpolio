@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
-            if (Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit)) ;
+            if (Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 setDestination(hit.point);
 
