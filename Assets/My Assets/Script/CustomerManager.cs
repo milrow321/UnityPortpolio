@@ -6,20 +6,37 @@ using UnityEngine.UI;
 
 public class CustomerManager : MonoBehaviour
 {
-    public Customer customer;
+    static public CustomerManager instance;
+
+    public GameObject customerPool;
+
+    public Customer[] customer;
 
     public GameObject spawner;
 
     public List<Customer> customerGroup;
 
+    //public int createNum; //생성된 손님 수
+
     float createTime; //손님 생성 시간
 
+    public int createNum;
+
+    private void Awake()
+    {
+        instance = this;
+        customer = customerPool.GetComponentsInChildren<Customer>();
+    }
 
 
-    //public int createNum; //생성된 손님 수
+    
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(1))
+        {
+            SpawnCustomer();
+        }
         
     }
 
@@ -27,10 +44,12 @@ public class CustomerManager : MonoBehaviour
 
     public void SpawnCustomer()
     {
-        int createNum = Random.Range(1, 5);
+        createNum = Random.Range(1, 5);
         for (int i = 0; i < createNum; i++)
         {
-            var newCus = Instantiate(customer, spawner.transform.position, Quaternion.identity);
+            int cusNum = Random.Range(0, customer.Length);
+            var newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
+            
             //customerGroup.Add(newCus);
         }
     }

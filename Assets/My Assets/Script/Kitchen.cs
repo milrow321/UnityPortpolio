@@ -52,11 +52,7 @@ public class Kitchen : MonoBehaviour
         recipe[0] = new List<Item>();
         recipe[0].Add(new Item(00000, "apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
         recipe[0].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        recipeBook.Add(recipe[0], 01000);
-
-        //recipe[0].Add(new Item(00000,"apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
-        //recipe[0].Add(new Item(00100,"water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        //recipeBook.Add(recipe[0], "사과주스");
+        recipeBook.Add(recipe[0], 01000);//사과주스
 
         recipe[1] = new List<Item>();
         recipe[1].Add(new Item(00001, "straberry", "딸기", "잘익은 빨간 딸기", Item.ItemType.INGREDIENT));
@@ -69,7 +65,7 @@ public class Kitchen : MonoBehaviour
         recipe[2].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
         recipeBook.Add(recipe[2], 01000);
 
-        //recipe.Clear();
+        
 
         
 
