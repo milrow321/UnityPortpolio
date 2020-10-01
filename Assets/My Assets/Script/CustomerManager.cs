@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class CustomerManager : MonoBehaviour
 {
@@ -29,7 +31,7 @@ public class CustomerManager : MonoBehaviour
         for (int i = 0; i < createNum; i++)
         {
             var newCus = Instantiate(customer, spawner.transform.position, Quaternion.identity);
-            customerGroup.Add(newCus);
+            //customerGroup.Add(newCus);
         }
     }
 

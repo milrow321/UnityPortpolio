@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
+
 public class Customer : MonoBehaviour
 {
     public float speed=10f;
