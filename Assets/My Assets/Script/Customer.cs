@@ -9,18 +9,18 @@ public class Customer : MonoBehaviour
 {
     public float speed=10f;
 
-    public GameObject tablePool;
+    //public GameObject tablePool;
 
-    [SerializeField]
-    private TableSeat[] table;
+    //[SerializeField]
+    //private TableSeat[] table;
 
 
     private NavMeshAgent agent;
 
     public Animator animator;
 
-    private int tableCount;
-    private int chairCount;
+    public int tableCount;
+    public int chairCount;
 
     private bool seatEmpty;
     private bool isMove;
@@ -28,7 +28,7 @@ public class Customer : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        table = tablePool.GetComponentsInChildren<TableSeat>();
+        //table = tablePool.GetComponentsInChildren<TableSeat>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         animator = GetComponentInChildren<Animator>();
@@ -39,8 +39,8 @@ public class Customer : MonoBehaviour
     {
         isMove = true;
         //FindTable();
-        chairCount = 0;
-        tableCount=0;
+        //chairCount = 0;
+        //tableCount=0;
 }
 
     // Update is called once per frame
@@ -56,63 +56,80 @@ public class Customer : MonoBehaviour
             Move();
         }
 
+        //FindTable();
 
-        if (table[tableCount].chair[chairCount].isSeat) chairCount++;
-        if (CustomerManager.instance.createNum==chairCount)
-        {
-            table[tableCount].isOccupied = true;
-            tableCount++;
-            chairCount = 0;
-        }
+        //if (table[tableCount].chair[chairCount].isSeat) chairCount++;
+
+        //    table[tableCount].isOccupied = true;
+        //    tableCount++;
+        //    chairCount = 0;
+
     }
 
-    private void Move()
+    public void Move()
     {
         
 
-        if (Vector3.Distance(transform.position, table[tableCount].chair[chairCount].transform.position) < 1)
+        agent.SetDestination(TablePool.instance.table[tableCount].chair[chairCount].transform.position);
+        var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
+        animator.transform.forward = dir;
+        animator.SetBool("isMove", true);
+
+        if (Vector3.Distance(transform.position, TablePool.instance.table[tableCount].chair[chairCount].transform.position) < 1)
         {
-            isMove = false;
-            Sit();
             animator.SetBool("isMove", false);
-            table[tableCount].chair[chairCount].isSeat = true;
+            Sit();
+            
+            
         }
-        else 
-        {
-            agent.SetDestination(table[tableCount].chair[chairCount].transform.position);
-            var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
-            animator.transform.forward = dir;
-            animator.SetBool("isMove", true);
-        }
+
+
+        //Vector3.Distance(transform.position ,TablePool.instance.table[0].chair[0].transform.position);
+
+        //if (Vector3.Distance(transform.position, table[tableCount].chair[chairCount].transform.position) < 1)
+        //{
+        //    isMove = false;
+        //    Sit();
+        //    animator.SetBool("isMove", false);
+        //    table[tableCount].chair[chairCount].isSeat = true;
+        //}
+        //else 
+        //{
+        //    agent.SetDestination(table[tableCount].chair[chairCount].transform.position);
+        //    var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
+        //    animator.transform.forward = dir;
+        //    animator.SetBool("isMove", true);
+        //}
     }
 
     private void Sit()
     {
+
+
         
-    
-        //agent.SetDestination(table[tableCount].chair[chairCount].transform.position);
-       
-        //animator.transform.position = table[tableCount].tf[chairCount].transform.position ;
+
+        isMove = false;
         animator.SetBool("isSeat", true);
-        
+        TablePool.instance.table[tableCount].chair[chairCount].isSeat = true;
+        if (chairCount == CustomerManager.instance.createNum)
+        {
+            TablePool.instance.table[tableCount].isOccupied = true;
+            chairCount = 0;
+        }
     }
 
     private void Order()
     {
-        
+        int menu = 01000;
+        Item menuItem;
+        DatabaseManager.instance.foodItemDictionary.TryGetValue(menu, out menuItem);
+
     }
 
-    private void FindTable()
+    public void Find(int _tableCount, int _chairCount)
     {
-        for (int i = 0; i < table.Length; i++)
-        {
-            if (table[i].isOccupied) continue;
-            else
-            {
-                tableCount = i;
-                break;
-            }
-        }
+        tableCount = _tableCount;
+        chairCount = _chairCount;
 
     }
 

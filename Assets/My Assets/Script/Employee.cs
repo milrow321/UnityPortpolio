@@ -11,10 +11,10 @@ public class Employee : MonoBehaviour
     public float speed = 10;
     private NavMeshAgent agent;
 
-    public GameObject tablePool;
+    //public GameObject tablePool;
 
-    [SerializeField]
-    private TableSeat[] table;
+    //[SerializeField]
+    //private TableSeat[] table;
 
     [SerializeField]
     public Transform counter;
@@ -28,7 +28,7 @@ public class Employee : MonoBehaviour
     void Start()
     {
 
-        table = tablePool.GetComponentsInChildren<TableSeat>();
+        //table = tablePool.GetComponentsInChildren<TableSeat>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         
@@ -37,9 +37,9 @@ public class Employee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < table.Length; i++)
+        for (int i = 0; i < TablePool.instance.table.Length; i++)
         {
-            if (table[i].isOccupied&&!table[i].gotMenu)
+            if (TablePool.instance.table[i].isOccupied&&!TablePool.instance.table[i].gotMenu)
             {
                 tableCount = i;
                 PassMenu();
@@ -52,17 +52,17 @@ public class Employee : MonoBehaviour
 
     private void Serve()
     {
-        agent.SetDestination(table[tableCount].transform.position);
+        agent.SetDestination(TablePool.instance.table[tableCount].transform.position);
     }
 
     private void PassMenu()
     {
         animator.SetBool("isMove", true);
-        agent.SetDestination(table[tableCount].transform.position);
-        if (Vector3.Distance(table[tableCount].transform.position, transform.position) < 3)
+        agent.SetDestination(TablePool.instance.table[tableCount].transform.position);
+        if (Vector3.Distance(TablePool.instance.table[tableCount].transform.position, transform.position) < 3)
         {
             animator.SetBool("isMove", false);
-            table[tableCount].gotMenu = true;
+            TablePool.instance.table[tableCount].gotMenu = true;
             Invoke("BackToCount",3f);
         }
     }
