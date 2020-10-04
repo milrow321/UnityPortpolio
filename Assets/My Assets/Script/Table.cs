@@ -6,7 +6,10 @@ public class Table : MonoBehaviour
 {
     static public Table instance;
 
+    [SerializeField]
     public bool isOccupied;
+
+    [SerializeField]
     public bool gotMenu;
 
     [SerializeField]

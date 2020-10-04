@@ -1,23 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MixSlot : MonoBehaviour
+public class OrderSlot : MonoBehaviour
 {
-
+    
 
     
 
     public Image icon;
 
+    
 
-    public void MixSetImage(Image _itemImage)
+    public void SetImage(Image _itemImage)
     {
+        
+       
+
         icon.sprite = _itemImage.sprite;
+        
+       
     }
-   public void DeleteImage()
+    public void DeleteImage()
     {
         icon.sprite = null;
     }

@@ -42,7 +42,9 @@ public class Employee : MonoBehaviour
             if (TablePool.instance.table[i].isOccupied&&!TablePool.instance.table[i].gotMenu)
             {
                 tableCount = i;
-                PassMenu();
+                Invoke("PassMenu", 10f);
+
+                //PassMenu();
                 break;
             }
         }

@@ -39,6 +39,7 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
+        
         customerGroupMax = 4;
         customerGroup = new List<Customer>[customerGroupMax];
         count = 0;
@@ -55,14 +56,21 @@ public class CustomerManager : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
 
-                
+                if (coun > TablePool.instance.table.Length) coun = 0;
                 SpawnCustomer();
                 coun++;
                 coun2 = 0;
             }
         }
-        
 
+        //for (int i = 0; i < TablePool.instance.table.Length; i++)
+        //{
+        //    if (TablePool.instance.table[i].chair[createNum].isSeat)
+        //    {
+        //        TablePool.instance.table[i].isOccupied = true;
+        //    }
+        //}
+        
 
     }
 
@@ -81,6 +89,7 @@ public class CustomerManager : MonoBehaviour
             coun2++;
             //FindSeat(newCus);
             //newCus.Move
+            TablePool.instance.table[coun].isOccupied = true;
         }
     }
 
