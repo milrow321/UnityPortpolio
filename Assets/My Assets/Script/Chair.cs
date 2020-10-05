@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class Chair : MonoBehaviour
 {
-    
-    public bool isSeat;
+    public Table parentTable; 
+    public Customer onCustomer;
+
+    public bool IsSeat()
+    {
+        return onCustomer != null;
+    }
 
     private void Start()
     {
-        
-        isSeat = false;
+        onCustomer = null;
+        parentTable = transform.parent.GetComponent<Table>();
+    }
+
+    public void SetCustomer(Customer customer)
+    {
+        if (onCustomer != null)
+            return;
+
+        onCustomer = customer;
+
+        if (parentTable != null)
+            parentTable.OnCustomerSeat(this);
     }
 
 }

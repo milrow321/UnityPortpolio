@@ -15,8 +15,6 @@ public class OrderSlot : MonoBehaviour
 
     public void SetImage(Image _itemImage)
     {
-        
-       
 
         icon.sprite = _itemImage.sprite;
         

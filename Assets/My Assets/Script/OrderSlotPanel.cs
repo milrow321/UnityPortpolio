@@ -10,18 +10,7 @@ public class OrderSlotPanel : MonoBehaviour
 
     private void Awake()
     {
-
-        
-
-
-
-        
-
             slot = GetComponentsInChildren<OrderSlot>();
-
-
-        
-
     }
 
 }

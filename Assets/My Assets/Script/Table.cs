@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    static public Table instance;
 
     [SerializeField]
     public bool isOccupied;
@@ -26,8 +25,13 @@ public class Table : MonoBehaviour
 
     void Start()
     {
-        instance = this;
+        
         isOccupied = false;
         gotMenu = false;
+    }
+
+    public void OnCustomerSeat(Chair _chair)
+    {
+        
     }
 }

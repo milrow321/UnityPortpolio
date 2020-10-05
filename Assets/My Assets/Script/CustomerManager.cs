@@ -8,11 +8,11 @@ public class CustomerManager : MonoBehaviour
 {
     static public CustomerManager instance;
 
-    public GameObject customerPool;
+    public GameObject customerPool; //설정한 손님들이 들어있는 풀
 
-    public Customer[] customer;
+    public Customer[] customer;//풀에 있는 손님
 
-    public GameObject spawner;
+    public GameObject spawner;//소폰지점
 
     public int customerGroupMax;
     public List<Customer>[] customerGroup;
@@ -39,6 +39,8 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
+     
+        
         
         customerGroupMax = 4;
         customerGroup = new List<Customer>[customerGroupMax];
@@ -56,13 +58,15 @@ public class CustomerManager : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
 
-                if (coun > TablePool.instance.table.Length) coun = 0;
+                //if (coun > TablePool.instance.table.Length) coun = 0;
                 SpawnCustomer();
                 coun++;
                 coun2 = 0;
+                
             }
         }
 
+       
         //for (int i = 0; i < TablePool.instance.table.Length; i++)
         //{
         //    if (TablePool.instance.table[i].chair[createNum].isSeat)
@@ -87,31 +91,16 @@ public class CustomerManager : MonoBehaviour
             newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
             newCus.Find(coun, coun2);
             coun2++;
+            
             //FindSeat(newCus);
             //newCus.Move
-            TablePool.instance.table[coun].isOccupied = true;
+            //TablePool.instance.table[coun].isOccupied = true;
         }
     }
 
-    public void FindSeat(Customer _customer)
+    public void SetCustomerSeat()
     {
-        for (int i = 0; i < TablePool.instance.tableNum; i++)
-        {
-            if (!TablePool.instance.table[i].isOccupied)
-            {
-                for (int j = 0; j < TablePool.instance.table[i].chairNum; j++)
-                {
-                    if (!TablePool.instance.table[i].chair[j].isSeat)
-                    {
-                        TablePool.instance.table[i].chair[j].isSeat = true;
-                        _customer.Find(i, j);
 
-                    }
-                    else continue;
-                }
-            }
-            else continue;
-        }
     }
 
 

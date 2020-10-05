@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class TablePool : MonoBehaviour
 {
-    static public TablePool instance; 
-
-    private GameObject tablePool;
+    static public TablePool instance;
 
     [SerializeField]
     public Table[] table;
@@ -17,11 +15,8 @@ public class TablePool : MonoBehaviour
 
     private void Awake()
     {
-
         instance = this;
-        tablePool = this.gameObject;
-        table = tablePool.GetComponentsInChildren<Table>();
+        table = GetComponentsInChildren<Table>();
 
-        
     }
 }
