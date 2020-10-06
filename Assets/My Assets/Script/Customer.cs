@@ -7,10 +7,11 @@ using UnityEngine.AI;
 
 public class Customer : MonoBehaviour
 {
+
     public float speed=10f;
 
-    
 
+    public TablePool tablePool;
 
     private NavMeshAgent agent;
 
@@ -24,10 +25,13 @@ public class Customer : MonoBehaviour
 
     private Item menuItem;//주문한 아이템(요리)
 
+    private float time;
+
+
     // Start is called before the first frame update
     private void Awake()
-    {   
-
+    {
+       
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         animator = GetComponentInChildren<Animator>();
@@ -47,61 +51,66 @@ public class Customer : MonoBehaviour
     {
 
 
-        Move(tablePool);
-
+        if (isMove) Move(tablePool);
+        else Sit(tablePool.table[tableCount].chair[chairCount]);
 
         //if (isMove)
         //{
         //    Move();
         //}
-        //if (TablePool.instance.table[tableCount].gotMenu)
-        //{
-        //    Order();
-        //}
-        
+        if (TablePool.instance.table[tableCount].gotMenu)
+        {
+            Order();
+        }
 
+       
+            
     }
 
     public void Move(TablePool _tablePool)
     {
+        time += Time.deltaTime;
+
         agent.SetDestination(_tablePool.table[tableCount].chair[chairCount].transform.position);
         var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
         animator.transform.forward = dir;
         animator.SetBool("isMove", true);
 
-        //if (Vector3.Distance(transform.position, des) < 1)
-        //{
-        //    animator.SetBool("isMove", false);
-        //    Sit();
+        if (Vector3.Distance(transform.position, _tablePool.table[tableCount].chair[chairCount].transform.position) < 1)
+        {
+            //animator.SetBool("isMove", false);
+            //Sit(_tablePool.table[tableCount].chair[chairCount]);
+            animator.SetBool("isMove", false);
+            isMove = false;
+        }
 
-        //}
-
+        if (time >= 10) agent.radius=0;
+        
         //agent.SetDestination(TablePool.instance.table[tableCount].chair[chairCount].transform.position);
         //var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
         //animator.transform.forward = dir;
         //animator.SetBool("isMove", true);
 
-        //if (Vector3.Distance(transform.position, TablePool.instance.table[tableCount].chair[chairCount].transform.position) < 1)
-        //{
-        //    animator.SetBool("isMove", false);
-        //    Sit();
+            //if (Vector3.Distance(transform.position, TablePool.instance.table[tableCount].chair[chairCount].transform.position) < 1)
+            //{
+            //    animator.SetBool("isMove", false);
+            //    Sit();
 
-        //}
+            //}
 
     }
 
     private void Sit(Chair chair)
     {
-        animator.SetBool("isMove", false);
-        isMove = false;
+        
         animator.SetBool("isSeat", true);
         chair.SetCustomer(this);
 
         var dir = chair.parentTable.transform.position-transform.position;
-        agent.transform.forward = dir;
-        var posZ = new Vector3(0, 3, 0);
+        animator.transform.forward = dir;
+        var posZ = new Vector3(0, 1, 0);
         agent.transform.position = chair.transform.position+posZ;
-        
+        agent.radius = 0;
     }
 
     private void Order()
@@ -109,11 +118,11 @@ public class Customer : MonoBehaviour
         int menu = 01000;
         
         DatabaseManager.instance.foodItemDictionary.TryGetValue(menu, out menuItem);
+
+        OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].SetItem(menuItem);
+
+        //OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].icon.sprite = menuItem.itemImage;
         
-        OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].icon.sprite = menuItem.itemImage;
-        Color color = OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].GetComponent<Image>().color;
-        color.a = 1f;
-        OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].icon.color = color;
 
     }
 

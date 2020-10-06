@@ -16,6 +16,8 @@ public class Employee : MonoBehaviour
     //[SerializeField]
     //private TableSeat[] table;
 
+
+
     [SerializeField]
     public Transform counter;
 
@@ -24,14 +26,21 @@ public class Employee : MonoBehaviour
 
     public Transform defPos;
 
+    private Vector3 tableDesPos;
+
+    public Kitchen kitchen;
+    private CounterSlot[] counterFoods;
+    public OrderPanel orders;
+
     // Start is called before the first frame update
     void Start()
     {
+        counterFoods = kitchen.GetComponentsInChildren<CounterSlot>();
 
         //table = tablePool.GetComponentsInChildren<TableSeat>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        
+        tableDesPos = new Vector3(-2, 0, 1);
     }
 
     // Update is called once per frame
@@ -48,21 +57,25 @@ public class Employee : MonoBehaviour
                 break;
             }
         }
+
         
+       
 
     }
 
     private void Serve()
     {
-        agent.SetDestination(TablePool.instance.table[tableCount].transform.position);
+        agent.SetDestination(TablePool.instance.table[tableCount].transform.position+ tableDesPos);
     }
 
     private void PassMenu()
     {
         animator.SetBool("isMove", true);
-        agent.SetDestination(TablePool.instance.table[tableCount].transform.position);
-        if (Vector3.Distance(TablePool.instance.table[tableCount].transform.position, transform.position) < 3)
+        agent.SetDestination(TablePool.instance.table[tableCount].transform.position+ tableDesPos);
+        if (Vector3.Distance(TablePool.instance.table[tableCount].transform.position+ tableDesPos, transform.position) < 1)
         {
+            var dir = TablePool.instance.table[tableCount].transform.position - transform.position;
+            animator.transform.forward = dir;
             animator.SetBool("isMove", false);
             TablePool.instance.table[tableCount].gotMenu = true;
             Invoke("BackToCount",3f);

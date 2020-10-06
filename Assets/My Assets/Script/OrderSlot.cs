@@ -5,18 +5,33 @@ using UnityEngine.UI;
 
 public class OrderSlot : MonoBehaviour
 {
-    
 
-    
 
+
+    public OrderSlotPanel slotParent;
     public Image icon;
+    private Customer customer;
 
-    
 
-    public void SetImage(Image _itemImage)
+    private void Start()
+    {
+        slotParent = transform.parent.GetComponent<OrderSlotPanel>();
+    }
+
+    public void SetCustomerOrder(Customer _cus)
     {
 
-        icon.sprite = _itemImage.sprite;
+    }
+
+
+
+    public void SetItem(Item _item)
+    {
+        Color color =icon.color;
+        color.a = 1f;
+        icon.color = color;
+
+        icon.sprite = _item.itemImage;
         
        
     }

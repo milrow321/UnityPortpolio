@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class CustomerManager : MonoBehaviour
 {
+    
+    
+
     static public CustomerManager instance;
 
     public GameObject customerPool; //설정한 손님들이 들어있는 풀
@@ -15,7 +18,12 @@ public class CustomerManager : MonoBehaviour
     public GameObject spawner;//소폰지점
 
     public int customerGroupMax;
-    public List<Customer>[] customerGroup;
+
+    [SerializeField]
+    private List<Customer> customerGroup;
+
+    
+
     private int count;
 
     private Customer newCus;
@@ -26,10 +34,10 @@ public class CustomerManager : MonoBehaviour
     public int createNum;//한번에 생성할 손님 수
     public int customerNum;
 
-    private int coun;
-    private int coun2;
+    private int coun; //테이블 카운트
+    private int coun2; //의자카운트
 
-
+    public TablePool tablePool;
 
     private void Awake()
     {
@@ -43,7 +51,7 @@ public class CustomerManager : MonoBehaviour
         
         
         customerGroupMax = 4;
-        customerGroup = new List<Customer>[customerGroupMax];
+        customerGroup = new List<Customer>();
         count = 0;
 
         coun = 0;
@@ -91,11 +99,12 @@ public class CustomerManager : MonoBehaviour
             newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
             newCus.Find(coun, coun2);
             coun2++;
-            
+            customerGroup.Add(newCus);
             //FindSeat(newCus);
             //newCus.Move
             //TablePool.instance.table[coun].isOccupied = true;
         }
+        tablePool.table[coun].isOccupied=true;
     }
 
     public void SetCustomerSeat()

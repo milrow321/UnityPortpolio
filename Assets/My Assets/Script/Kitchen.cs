@@ -25,7 +25,8 @@ public class Kitchen : MonoBehaviour
 
     public Transform mixSlotTf; //조합슬롯의 부모객체(패널)
 
-    public ItemSlot[] counterSlot; //카운터 슬롯들
+    public CounterSlot[] counterSlot; //카운터 슬롯들
+    
 
     public Transform counterSlotTf;
 
@@ -35,7 +36,7 @@ public class Kitchen : MonoBehaviour
     {
         mixSlot = mixSlotTf.GetComponentsInChildren<MixSlot>();
 
-        counterSlot = counterSlotTf.GetComponentsInChildren<ItemSlot>();
+        counterSlot = counterSlotTf.GetComponentsInChildren<CounterSlot>();
         CounterSlotCount = 0;
 
         count = 0;
@@ -157,8 +158,10 @@ public class Kitchen : MonoBehaviour
         if (CounterSlotCount < counterSlot.Length)
         {
             counterSlot[CounterSlotCount].icon.color = color;
-            counterSlot[CounterSlotCount].icon.sprite = _item.itemImage;
-            
+            //counterSlot[CounterSlotCount].icon.sprite = _item.itemImage;
+
+            counterSlot[CounterSlotCount].SetItem(_item);
+
             CounterSlotCount++;
         }
       
