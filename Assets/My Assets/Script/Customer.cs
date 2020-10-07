@@ -8,97 +8,50 @@ using UnityEngine.AI;
 public class Customer : MonoBehaviour
 {
 
-    public float speed=10f;
-
-
-    public TablePool tablePool;
+    
+    
 
     private NavMeshAgent agent;
 
     public Animator animator;
 
-    public int tableCount;
-    public int chairCount;
-
     private bool seatEmpty;
     private bool isMove;
 
-    private Item menuItem;//주문한 아이템(요리)
+    private Item orderItem;//주문한 아이템(요리)
+    private Item recieveItem; //서빙 받은 아이템(요리)
 
     private float time;
 
-    private OrderSlot orderSlot;
-
     // Start is called before the first frame update
     private void Awake()
-    {
-       
+    {        
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
+        //agent.updateRotation = false;
         animator = GetComponentInChildren<Animator>();
-        
-    }
-
-    private void Start()
-    {
         isMove = true;
-        //FindTable();
-        //chairCount = 0;
-        //tableCount=0;
-}
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        if (isMove) Move(tablePool);
-        else Sit(tablePool.table[tableCount].chair[chairCount]);
-
-        //if (isMove)
-        //{
-        //    Move();
-        //}
-        if (TablePool.instance.table[tableCount].gotMenu)
-        {
-            Order();
-        }
-
-       
-            
     }
 
-    public void Move(TablePool _tablePool)
+   
+    
+
+    public void Move(Vector3 des)
     {
         time += Time.deltaTime;
 
-        agent.SetDestination(_tablePool.table[tableCount].chair[chairCount].transform.position);
+        agent.SetDestination(des);
         var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
         animator.transform.forward = dir;
         animator.SetBool("isMove", true);
 
-        if (Vector3.Distance(transform.position, _tablePool.table[tableCount].chair[chairCount].transform.position) < 1)
+        if (Vector3.Distance(transform.position, des) < 1)
         {
-            //animator.SetBool("isMove", false);
-            //Sit(_tablePool.table[tableCount].chair[chairCount]);
             animator.SetBool("isMove", false);
             isMove = false;
         }
 
         if (time >= 10) agent.radius=0;
         
-        //agent.SetDestination(TablePool.instance.table[tableCount].chair[chairCount].transform.position);
-        //var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
-        //animator.transform.forward = dir;
-        //animator.SetBool("isMove", true);
-
-            //if (Vector3.Distance(transform.position, TablePool.instance.table[tableCount].chair[chairCount].transform.position) < 1)
-            //{
-            //    animator.SetBool("isMove", false);
-            //    Sit();
-
-            //}
-
     }
 
     private void Sit(Chair chair)
@@ -114,33 +67,33 @@ public class Customer : MonoBehaviour
         agent.radius = 0;
     }
 
-    private void Order()
+    private Item Order()
     {
-        int menu = 01000;
+        int menu = 01000; //랜덤하게 뽑을 아이템ID
         
-        DatabaseManager.instance.foodItemDictionary.TryGetValue(menu, out menuItem);
-
-        OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].SetItem(menuItem);
-
-       // orderSlot.SetItem(menuItem);
-
-        //OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].icon.sprite = menuItem.itemImage;
-        
-
+        DatabaseManager.instance.foodItemDictionary.TryGetValue(menu, out orderItem);
+        return orderItem;
     }
 
-    public void Find(int _tableCount, int _chairCount)
+    private void Drink(Item _recieveItem)
     {
+        recieveItem = _recieveItem;
         
-        tableCount = _tableCount;
-        chairCount = _chairCount;
-
     }
 
+    
     private void Exit()
     {
-        
+        Destroy(this);
     }
 
+
+    //public void Find(int _tableCount, int _chairCount)
+    //{
+
+    //    tableCount = _tableCount;
+    //    chairCount = _chairCount;
+
+    //}
 
 }
