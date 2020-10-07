@@ -14,6 +14,8 @@ public class Table : MonoBehaviour
     [SerializeField]
     public Chair[] chair;
 
+    private int chairCount;
+
     public int chairNum = 4;//테이블 당 의자 갯수
     // Start is called before the first frame update
 
@@ -30,8 +32,18 @@ public class Table : MonoBehaviour
         gotMenu = false;
     }
 
+    private void Update()
+    {
+        setCondition(chairCount);
+    }
+
     public void OnCustomerSeat(Chair _chair)
     {
         
+    }
+
+    public void setCondition(int _chairCount)
+    {
+        if (chair[_chairCount].IsSeat()) isOccupied = true;
     }
 }

@@ -19,8 +19,7 @@ public class CustomerManager : MonoBehaviour
 
     public int customerGroupMax;
 
-    [SerializeField]
-    private List<Customer> customerGroup;
+    
 
     
 
@@ -51,7 +50,7 @@ public class CustomerManager : MonoBehaviour
         
         
         customerGroupMax = 4;
-        customerGroup = new List<Customer>();
+        
         count = 0;
 
         coun = 0;
@@ -99,12 +98,10 @@ public class CustomerManager : MonoBehaviour
             newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
             newCus.Find(coun, coun2);
             coun2++;
-            customerGroup.Add(newCus);
-            //FindSeat(newCus);
-            //newCus.Move
-            //TablePool.instance.table[coun].isOccupied = true;
+            
         }
-        tablePool.table[coun].isOccupied=true;
+        //tablePool.table[coun].isOccupied=true;
+        tablePool.table[coun].setCondition(coun2);
     }
 
     public void SetCustomerSeat()
