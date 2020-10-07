@@ -1,23 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-
-public class CustomerManager : MonoBehaviour
+public class CustomerSpawner : MonoBehaviour
 {
-
-    
-
-    static public CustomerManager instance;
-
     public GameObject customerPool; //설정한 손님들이 들어있는 풀
 
     public Customer[] customer;//풀에 있는 손님
 
-    
-
-    public GameObject spawner;//스폰지점
+    //public GameObject spawner;//스폰지점
 
     public int customerGroupMax; //가게에 들어올 수 있는 최대 손님그룹 수
 
@@ -42,7 +33,7 @@ public class CustomerManager : MonoBehaviour
 
     private void Awake()
     {
-
+        
         customer = customerPool.GetComponentsInChildren<Customer>();
     }
 
@@ -67,15 +58,13 @@ public class CustomerManager : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
 
-
+            
                 SpawnCustomer();
                 coun++;
                 coun2 = 0;
 
             }
         }
-
-        
     }
 
     public void SpawnCustomer()
@@ -86,17 +75,11 @@ public class CustomerManager : MonoBehaviour
         for (int i = 0; i < createNum; i++)
         {
             int cusNum = Random.Range(0, customer.Length);
-            newCus = Instantiate(customer[cusNum],spawner.transform.position, Quaternion.identity);
+            newCus = Instantiate(customer[cusNum], transform.position, Quaternion.identity);
             newCus.Find(coun, coun2);
             coun2++;
         }
-
-    }
-
-    public void SeatCustomer(TablePool _tablePool)
-    {
         
     }
-
-
+  
 }

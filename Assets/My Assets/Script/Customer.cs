@@ -8,8 +8,8 @@ using UnityEngine.AI;
 public class Customer : MonoBehaviour
 {
 
-    
-    
+
+   
 
     private NavMeshAgent agent;
 
@@ -21,7 +21,10 @@ public class Customer : MonoBehaviour
     private Item orderItem;//주문한 아이템(요리)
     private Item recieveItem; //서빙 받은 아이템(요리)
 
-    private float time;
+    private int tableCount; //배정받은 테이블 번호
+    private int chairCount; //배정받은 의자 번호
+
+    private float time; //끼었을때 방지용 경과 시간
 
     // Start is called before the first frame update
     private void Awake()
@@ -32,19 +35,23 @@ public class Customer : MonoBehaviour
         isMove = true;
     }
 
-   
-    
+    private void Update()
+    {
 
-    public void Move(Vector3 des)
+        if (isMove) Move(CustomerManager.instance.tablePool);
+    }
+
+
+    public void Move(TablePool _tablePool)
     {
         time += Time.deltaTime;
 
-        agent.SetDestination(des);
+        agent.SetDestination(_tablePool.table[tableCount].chair[chairCount].transform.position);
         var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
         animator.transform.forward = dir;
         animator.SetBool("isMove", true);
 
-        if (Vector3.Distance(transform.position, des) < 1)
+        if (Vector3.Distance(transform.position, _tablePool.table[tableCount].chair[chairCount].transform.position) < 1)
         {
             animator.SetBool("isMove", false);
             isMove = false;
@@ -67,7 +74,7 @@ public class Customer : MonoBehaviour
         agent.radius = 0;
     }
 
-    private Item Order()
+    public Item Order()
     {
         int menu = 01000; //랜덤하게 뽑을 아이템ID
         
@@ -81,6 +88,10 @@ public class Customer : MonoBehaviour
         
     }
 
+    private void Estimate()
+    {
+        
+    }
     
     private void Exit()
     {
@@ -88,12 +99,12 @@ public class Customer : MonoBehaviour
     }
 
 
-    //public void Find(int _tableCount, int _chairCount)
-    //{
+    public void Find(int _tableCount, int _chairCount)
+    {
 
-    //    tableCount = _tableCount;
-    //    chairCount = _chairCount;
+        tableCount = _tableCount;
+        chairCount = _chairCount;
 
-    //}
+    }
 
 }

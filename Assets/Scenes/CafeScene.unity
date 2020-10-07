@@ -769,11 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3a3fd0e3e7db3429bc04468052cbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tablePool: {fileID: 1091045904}
   animator: {fileID: 1840289773}
-  tableCount: 0
-  chairCount: 0
 --- !u!195 &107478084
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2273,7 +2269,6 @@ MonoBehaviour:
   customer: []
   spawner: {fileID: 247844896}
   customerGroupMax: 0
-  customerGroup: []
   createNum: 0
   customerNum: 0
   tablePool: {fileID: 1091045904}
@@ -4558,11 +4553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3a3fd0e3e7db3429bc04468052cbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tablePool: {fileID: 1091045904}
   animator: {fileID: 1499686231}
-  tableCount: 0
-  chairCount: 0
 --- !u!195 &630796683
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8734,11 +8725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3a3fd0e3e7db3429bc04468052cbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tablePool: {fileID: 1091045904}
   animator: {fileID: 605609743}
-  tableCount: 0
-  chairCount: 0
 --- !u!195 &1243578611
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9146,11 +9133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3a3fd0e3e7db3429bc04468052cbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tablePool: {fileID: 1091045904}
   animator: {fileID: 1679701885}
-  tableCount: 0
-  chairCount: 0
 --- !u!195 &1278680385
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10659,11 +10642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3a3fd0e3e7db3429bc04468052cbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tablePool: {fileID: 1091045904}
   animator: {fileID: 462216440}
-  tableCount: 0
-  chairCount: 0
 --- !u!195 &1575437564
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11809,11 +11788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3a3fd0e3e7db3429bc04468052cbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tablePool: {fileID: 1091045904}
   animator: {fileID: 475962575}
-  tableCount: 0
-  chairCount: 0
 --- !u!195 &1696695279
 NavMeshAgent:
   m_ObjectHideFlags: 0

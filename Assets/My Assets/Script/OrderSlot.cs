@@ -10,7 +10,7 @@ public class OrderSlot : MonoBehaviour
     public Item item;
     public OrderSlotPanel slotParent;
     public Image icon;
-    private Customer customer;
+    
 
 
     private void Start()
@@ -20,7 +20,8 @@ public class OrderSlot : MonoBehaviour
 
     public void SetCustomerOrder(Customer _cus)
     {
-
+        item = _cus.Order();
+        icon.sprite =item.itemImage;
     }
 
 
