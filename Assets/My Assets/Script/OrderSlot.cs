@@ -7,7 +7,7 @@ public class OrderSlot : MonoBehaviour
 {
 
 
-
+    public Item item;
     public OrderSlotPanel slotParent;
     public Image icon;
     private Customer customer;
@@ -27,6 +27,7 @@ public class OrderSlot : MonoBehaviour
 
     public void SetItem(Item _item)
     {
+        item = _item;
         Color color =icon.color;
         color.a = 1f;
         icon.color = color;
@@ -35,8 +36,14 @@ public class OrderSlot : MonoBehaviour
         
        
     }
-    public void DeleteImage()
+    public void DeleteItem()
     {
+        item = null;
         icon.sprite = null;
+
+        Color color = icon.color;
+        color.a = 0f;
+        icon.color = color;
+        
     }
 }

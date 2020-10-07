@@ -1964,6 +1964,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 304028473}
 --- !u!114 &304028473
@@ -2115,6 +2126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 335964593}
 --- !u!1 &336866409
@@ -2167,6 +2189,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 336866412}
 --- !u!114 &336866412
@@ -2308,6 +2341,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 367891513}
 --- !u!114 &367891513
@@ -3718,6 +3762,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 493889610}
 --- !u!1 &509825146
@@ -4439,8 +4494,10 @@ MonoBehaviour:
   speed: 10
   counter: {fileID: 1765017144}
   defPos: {fileID: 1853988559}
-  kitchen: {fileID: 0}
-  orders: {fileID: 0}
+  counterTf: {fileID: 509825147}
+  counterFoods: []
+  orders: {fileID: 1210214070}
+  orderSlots: []
 --- !u!195 &601555035
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4977,6 +5034,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 656554593}
 --- !u!1 &671618036
@@ -5029,6 +5097,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 671618039}
 --- !u!114 &671618039
@@ -8060,6 +8139,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1166668364}
 --- !u!114 &1166668364
@@ -8541,6 +8631,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1222337012}
 --- !u!114 &1222337012
@@ -10065,6 +10166,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1414726426}
 --- !u!114 &1414726426
@@ -10864,6 +10976,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1620554677}
 --- !u!114 &1620554677
@@ -11050,6 +11173,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1640146255}
 --- !u!114 &1640146255
@@ -11476,6 +11610,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1691956312}
 --- !u!114 &1691956312
@@ -13019,6 +13164,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1839924161}
 --- !u!95 &1840289773 stripped
@@ -14199,6 +14355,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 1910350192}
 --- !u!114 &1910350192
@@ -16328,6 +16495,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15966c4d80645c6458af5b0f4eedf8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemID: 0
+    itemImageName: 
+    itemName: 
+    itemDescription: 
+    itemCount: 0
+    itemImage: {fileID: 0}
+    itemType: 0
+    itemPrefab: {fileID: 0}
+    grade: 0
+    weaponType: 
   slotParent: {fileID: 0}
   icon: {fileID: 2119243043}
 --- !u!114 &2119243043

@@ -17,7 +17,11 @@ public class CounterSlot : MonoBehaviour
     public void EraseItem()
     {
         item = null;
+        icon.sprite = null;
 
+        Color color = icon.color;
+        color.a = 0f;
+        icon.color = color;
     }
 
 }

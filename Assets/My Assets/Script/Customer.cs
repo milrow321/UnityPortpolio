@@ -27,6 +27,7 @@ public class Customer : MonoBehaviour
 
     private float time;
 
+    private OrderSlot orderSlot;
 
     // Start is called before the first frame update
     private void Awake()
@@ -120,6 +121,8 @@ public class Customer : MonoBehaviour
         DatabaseManager.instance.foodItemDictionary.TryGetValue(menu, out menuItem);
 
         OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].SetItem(menuItem);
+
+       // orderSlot.SetItem(menuItem);
 
         //OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].icon.sprite = menuItem.itemImage;
         

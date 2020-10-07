@@ -28,19 +28,28 @@ public class Employee : MonoBehaviour
 
     private Vector3 tableDesPos;
 
-    public Kitchen kitchen;
+    public Transform counterTf;
+
+    [SerializeField]
     private CounterSlot[] counterFoods;
+
     public OrderPanel orders;
+
+    [SerializeField]
+    private OrderSlot[] orderSlots;
 
     // Start is called before the first frame update
     void Start()
     {
-        counterFoods = kitchen.GetComponentsInChildren<CounterSlot>();
+       
 
         //table = tablePool.GetComponentsInChildren<TableSeat>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         tableDesPos = new Vector3(-2, 0, 1);
+
+        counterFoods = counterTf.GetComponentsInChildren<CounterSlot>();
+        orderSlots = orders.GetComponentsInChildren<OrderSlot>();
     }
 
     // Update is called once per frame
@@ -58,7 +67,20 @@ public class Employee : MonoBehaviour
             }
         }
 
-        
+        for (int i = 0; i < counterFoods.Length; i++)
+        {
+            for (int j = 0; j < orderSlots.Length; j++)
+            {
+                if (counterFoods[i] != null && orderSlots[j] != null)
+                {
+                    if (orderSlots[j].item==counterFoods[i].item)
+                    {
+                        orderSlots[j].DeleteItem();
+                        counterFoods[i].EraseItem();
+                    }
+                }
+            }
+        }
        
 
     }
