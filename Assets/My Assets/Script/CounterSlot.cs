@@ -21,7 +21,7 @@ public class CounterSlot : MonoBehaviour
     public void SetItem(Item _item)
     {
         item = _item;
-        Color color = GetComponent<Image>().color;
+        Color color = icon.color;
         color.a = 1f;
         icon.color = color;
         icon.sprite = _item.itemImage;

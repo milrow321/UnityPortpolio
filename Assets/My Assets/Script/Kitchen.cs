@@ -167,7 +167,7 @@ public class Kitchen : MonoBehaviour
 
         for (int i = 0; i < counterSlot.Length; i++)
         {
-            if (counterSlot[i].item.itemImage == null)
+            if (counterSlot[i].item.itemID == 0)
             {
                 counterSlot[i].SetItem(_item);
                 break;  
