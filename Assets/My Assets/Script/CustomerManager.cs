@@ -97,6 +97,7 @@ public class CustomerManager : MonoBehaviour
             int cusNum = Random.Range(0, customer.Length);
             newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
             newCus.Find(coun, coun2);
+            newCus.numberTicket = coun * 4 + coun2;
             coun2++;
             
         }

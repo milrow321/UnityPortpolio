@@ -151,20 +151,29 @@ public class Kitchen : MonoBehaviour
     {
         DatabaseManager.instance.foodItemDictionary.TryGetValue(_res, out Item _item);
 
-        Color color = counterSlot[0].icon.GetComponent<Image>().color;
-        color.a = 1f;
+        //Color color = counterSlot[0].icon.GetComponent<Image>().color;
+        //color.a = 1f;
 
-        
-        if (CounterSlotCount < counterSlot.Length)
+
+        //if (CounterSlotCount < counterSlot.Length)
+        //{
+        //    //counterSlot[CounterSlotCount].icon.color = color;
+        //    //counterSlot[CounterSlotCount].icon.sprite = _item.itemImage;
+
+        //    counterSlot[CounterSlotCount].SetItem(_item);
+
+        //    CounterSlotCount++;
+        //}
+
+        for (int i = 0; i < counterSlot.Length; i++)
         {
-            counterSlot[CounterSlotCount].icon.color = color;
-            //counterSlot[CounterSlotCount].icon.sprite = _item.itemImage;
-
-            counterSlot[CounterSlotCount].SetItem(_item);
-
-            CounterSlotCount++;
+            if (counterSlot[i].item.itemImage == null)
+            {
+                counterSlot[i].SetItem(_item);
+                break;  
+            }
+            else continue;
         }
-      
       
 
     }
