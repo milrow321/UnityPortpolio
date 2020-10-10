@@ -135,6 +135,12 @@ public class Customer : MonoBehaviour
     private void Drink()
     {
         OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].DeleteItem();
+        Invoke("Pay()",30f);
+    }
+
+    private void Pay()
+    { 
+
     }
 
     private void Exit()

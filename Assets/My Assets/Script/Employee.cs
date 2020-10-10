@@ -55,9 +55,9 @@ public class Employee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < TablePool.instance.table.Length; i++)
+        for (int i = 0; i < tablePool.table.Length; i++)
         {
-            if (TablePool.instance.table[i].isOccupied&&!TablePool.instance.table[i].gotMenu)
+            if (tablePool.table[i].isOccupied&&!tablePool.table[i].gotMenu)
             {
                 tableCount = i;
                 //Invoke("PassMenu", 10f);
@@ -73,7 +73,7 @@ public class Employee : MonoBehaviour
             {
                 
                 Serve(counterSlot[i].Serving());
-                
+                counterSlot[i].EraseItem();
                 break;
             }
         }
@@ -88,6 +88,7 @@ public class Employee : MonoBehaviour
         if (Vector3.Distance(transform.position, customer.transform.position) < 2)
         {
             customer.recieved = true;
+            
             BackToCount();
         }
     }
@@ -95,13 +96,13 @@ public class Employee : MonoBehaviour
     private void PassMenu()
     {
         animator.SetBool("isMove", true);
-        agent.SetDestination(TablePool.instance.table[tableCount].transform.position+ tableDesPos);
-        if (Vector3.Distance(TablePool.instance.table[tableCount].transform.position+ tableDesPos, transform.position) < 1)
+        agent.SetDestination(tablePool.table[tableCount].transform.position+ tableDesPos);
+        if (Vector3.Distance(tablePool.table[tableCount].transform.position+ tableDesPos, transform.position) < 1)
         {
-            var dir = TablePool.instance.table[tableCount].transform.position - transform.position;
+            var dir = tablePool.table[tableCount].transform.position - transform.position;
             animator.transform.forward = dir;
             animator.SetBool("isMove", false);
-            TablePool.instance.table[tableCount].gotMenu = true;
+            tablePool.table[tableCount].gotMenu = true;
             Invoke("BackToCount",3f);
         }
     }

@@ -37,6 +37,12 @@ public class Kitchen : MonoBehaviour
         mixSlot = mixSlotTf.GetComponentsInChildren<MixSlot>();
 
         counterSlot = counterSlotTf.GetComponentsInChildren<CounterSlot>();
+
+        for (int i = 0; i < counterSlot.Length; i++)
+        {
+            counterSlot[i].item = null;
+        }
+
         CounterSlotCount = 0;
 
         count = 0;
@@ -167,7 +173,7 @@ public class Kitchen : MonoBehaviour
 
         for (int i = 0; i < counterSlot.Length; i++)
         {
-            if (counterSlot[i].item.itemID == 0)
+            if (counterSlot[i].item == null || counterSlot[i].item.itemImage == null)
             {
                 counterSlot[i].SetItem(_item);
                 break;  

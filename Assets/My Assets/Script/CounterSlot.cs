@@ -18,6 +18,7 @@ public class CounterSlot : MonoBehaviour
     [SerializeField]
     List<Customer> prio;
 
+
     public void SetItem(Item _item)
     {
         item = _item;
@@ -30,6 +31,7 @@ public class CounterSlot : MonoBehaviour
     public void EraseItem()
     {
         item = null;
+        
         icon.sprite = null;
 
         Color color = icon.color;
@@ -83,7 +85,7 @@ public class CounterSlot : MonoBehaviour
 
         Customer cus;
         cus = prio[0];
-        EraseItem();
+        
         
         return cus;
         
