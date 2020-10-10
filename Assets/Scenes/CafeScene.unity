@@ -935,6 +935,7 @@ MonoBehaviour:
   recieved: 0
   orderSlot: {fileID: 0}
   numberTicket: 0
+  exitPoint: {fileID: 693789259}
 --- !u!195 &107478084
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1018,6 +1019,52 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
+--- !u!1 &139257701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139257703}
+  - component: {fileID: 139257702}
+  m_Layer: 0
+  m_Name: CafeManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &139257702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139257701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65cf735385b130419a455a5d11692f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  goldText: {fileID: 334072717}
+  reputation: 0
+--- !u!4 &139257703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139257701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 352.45993, y: 361.35574, z: -52.762314}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &141024589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1264,6 +1311,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 840890720}
   - {fileID: 977316053}
   - {fileID: 1569076101}
   - {fileID: 1362982581}
@@ -1271,7 +1319,6 @@ RectTransform:
   - {fileID: 1892977669}
   - {fileID: 948756121}
   - {fileID: 1210214067}
-  - {fileID: 840890720}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1938,7 +1985,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 
 --- !u!222 &334072718
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4874,6 +4921,7 @@ MonoBehaviour:
   recieved: 0
   orderSlot: {fileID: 0}
   numberTicket: 0
+  exitPoint: {fileID: 693789259}
 --- !u!195 &630796683
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5631,6 +5679,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentTable: {fileID: 0}
   onCustomer: {fileID: 0}
+--- !u!1 &693789258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693789259}
+  m_Layer: 0
+  m_Name: ExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693789259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693789258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.44, y: -2, z: -3.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5857,7 +5935,7 @@ RectTransform:
   - {fileID: 491624684}
   - {fileID: 80472363}
   m_Father: {fileID: 153289613}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6019,7 +6097,7 @@ RectTransform:
   - {fileID: 1695163524}
   - {fileID: 334072716}
   m_Father: {fileID: 153289613}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7064,7 +7142,7 @@ RectTransform:
   - {fileID: 447057339}
   - {fileID: 920179228}
   m_Father: {fileID: 153289613}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7425,7 +7503,7 @@ RectTransform:
   m_Children:
   - {fileID: 2029932658}
   m_Father: {fileID: 153289613}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9104,7 +9182,7 @@ RectTransform:
   - {fileID: 1173855424}
   - {fileID: 1924941628}
   m_Father: {fileID: 153289613}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9328,6 +9406,7 @@ MonoBehaviour:
   recieved: 0
   orderSlot: {fileID: 0}
   numberTicket: 0
+  exitPoint: {fileID: 693789259}
 --- !u!195 &1243578611
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9642,6 +9721,7 @@ MonoBehaviour:
   recieved: 0
   orderSlot: {fileID: 0}
   numberTicket: 0
+  exitPoint: {fileID: 693789259}
 --- !u!195 &1278680385
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10294,7 +10374,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 153289613}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11672,7 +11752,7 @@ RectTransform:
   m_Children:
   - {fileID: 636171544}
   m_Father: {fileID: 153289613}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11802,6 +11882,7 @@ MonoBehaviour:
   recieved: 0
   orderSlot: {fileID: 0}
   numberTicket: 0
+  exitPoint: {fileID: 693789259}
 --- !u!195 &1575437564
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13030,6 +13111,7 @@ MonoBehaviour:
   recieved: 0
   orderSlot: {fileID: 0}
   numberTicket: 0
+  exitPoint: {fileID: 693789259}
 --- !u!195 &1696695279
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15408,7 +15490,7 @@ RectTransform:
   - {fileID: 509825147}
   - {fileID: 1866521043}
   m_Father: {fileID: 153289613}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

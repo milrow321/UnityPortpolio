@@ -24,6 +24,7 @@ public class Customer : MonoBehaviour
     private bool seatEmpty;
     private bool isMove;
     public bool recieved;
+    private bool isExit;
 
     private Item menuItem;//주문한 아이템(요리)
 
@@ -32,6 +33,8 @@ public class Customer : MonoBehaviour
     public OrderSlot orderSlot;
 
     public int numberTicket;//손님이 들어온 순서를 설정
+
+    public Transform exitPoint;
 
     // Start is called before the first frame update
     private void Awake()
@@ -47,6 +50,7 @@ public class Customer : MonoBehaviour
     {
         recieved = false;
         isMove = true;
+        isExit = false;
         //FindTable();
         //chairCount = 0;
         //tableCount=0;
@@ -58,19 +62,19 @@ public class Customer : MonoBehaviour
 
 
         if (isMove) Move(tablePool);
-        else Sit(tablePool.table[tableCount].chair[chairCount]);
-
+        if(!isMove&&!isExit) Sit(tablePool.table[tableCount].chair[chairCount]);
+        if (isExit&& !isMove) Exit();
         //if (isMove)
         //{
         //    Move();
         //}
-        if (TablePool.instance.table[tableCount].gotMenu)
+        if (!isMove&&tablePool.table[tableCount].gotMenu)
         {
             Order();
         }
 
-        if (recieved) Drink();
-
+        if (recieved&&!isExit&& !isMove) Drink();
+        
     }
 
     public void Move(TablePool _tablePool)
@@ -135,17 +139,32 @@ public class Customer : MonoBehaviour
     private void Drink()
     {
         OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].DeleteItem();
-        Invoke("Pay()",30f);
+        Pay();
+        //Invoke("Pay()",30f);
     }
 
     private void Pay()
-    { 
-
+    {
+        CafeManager.instance.gold += 50;
+        isExit = true;
+        //Exit();
     }
 
     private void Exit()
     {
         
+        
+        agent.SetDestination(exitPoint.position);
+
+        var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
+        animator.transform.forward = dir;
+        
+        if(Vector3.Distance(transform.position,exitPoint.position)<1) Destroy(this.gameObject);
+        tablePool.table[tableCount].gotMenu = false;
+        animator.SetBool("isMove", true);
+        animator.SetBool("isSeat", false);
+
+        //this.gameObject.SetActive(false);
     }
 
 
