@@ -23,18 +23,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
 
     private Item item;
 
-    
-
-
-    private void Start()
-    {
-        
-        
-        
-    }
-
-
-
+   
     public void Additem(Item _item)
     {
         item = _item;
@@ -92,6 +81,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
         if (Kitchen.instance.count < Kitchen.instance.mixSlot.Length)
         {
             Kitchen.instance.AddDragSlotItem(DragSlot.instance.dragSlot.item);
+            Color color = Kitchen.instance.mixSlot[Kitchen.instance.count].icon.color;
+            color.a = 1f;
+            Kitchen.instance.mixSlot[Kitchen.instance.count].icon.color = color;
             Kitchen.instance.mixSlot[Kitchen.instance.count].MixSetImage(icon);
             Kitchen.instance.count++;
         }

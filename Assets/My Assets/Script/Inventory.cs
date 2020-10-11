@@ -50,9 +50,9 @@ public class Inventory : MonoBehaviour
 
         slots = tf.GetComponentsInChildren<ItemSlot>();
 
-        inventoryItemList.Add(new Item(00000, "apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
+        //inventoryItemList.Add(new Item(00000, "apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
         inventoryItemList.Add(new Item(00001, "straberry", "딸기", "잘익은 빨간 딸기", Item.ItemType.INGREDIENT));
-        inventoryItemList.Add(new Item(00002, "cherry", "체리", "탱탱한 체리", Item.ItemType.INGREDIENT));
+        //inventoryItemList.Add(new Item(00002, "cherry", "체리", "탱탱한 체리", Item.ItemType.INGREDIENT));
         inventoryItemList.Add(new Item(00003, "grapes", "포도", "보라빛의 포도", Item.ItemType.INGREDIENT));
         inventoryItemList.Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
         inventoryItemList.Add(new Item(00101, "milk", "우유", "뼈가 튼튼해지는 우유", Item.ItemType.INGREDIENT));
@@ -152,13 +152,7 @@ public class Inventory : MonoBehaviour
 
 
 
-    // Update is called once per frame
-    void Update()
-    {
-
-       
-
-    }
+    
 
    
    

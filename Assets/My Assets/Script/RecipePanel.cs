@@ -21,16 +21,7 @@ public class RecipePanel : MonoBehaviour
     private void Update()
     {
         SetRecipe();
-        for (int i = 0; i < 10; i++)
-        {
-            int res;
-            Item _item;
-            //if (kitchen.recipe[i] == null) continue;
-            kitchen.recipeBook.TryGetValue(kitchen.recipe[i], out res);
-            DatabaseManager.instance.foodItemDictionary.TryGetValue(res, out _item);
-            if (_item != null) recipeSlotPanel[i].recipeComplete.SetItemImage(_item.itemImage);
-            else continue;
-        }
+        
     }
     private void SetRecipe()
     {

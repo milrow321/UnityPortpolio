@@ -19,6 +19,10 @@ public class MixSlot : MonoBehaviour
     }
    public void DeleteImage()
     {
+        Color color = icon.color;
+        color.a = 0f;
+        icon.color = color;
         icon.sprite = null;
+
     }
 }

@@ -62,7 +62,7 @@ public class Kitchen : MonoBehaviour
 
 
 
-
+        gameObject.SetActive(false);
 
     }
 
