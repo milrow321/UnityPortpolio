@@ -45,5 +45,6 @@ public class Table : MonoBehaviour
     public void setCondition(int _chairCount)
     {
         if (chair[_chairCount].IsSeat()) isOccupied = true;
+        else isOccupied = false;
     }
 }

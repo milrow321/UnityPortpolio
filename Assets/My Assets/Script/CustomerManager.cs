@@ -29,6 +29,7 @@ public class CustomerManager : MonoBehaviour
    
 
     float createTime; //손님 생성 시간
+    float spawnTime;//생성시간을 랜덤하게 할 랜덤 시간
 
     public int createNum;//한번에 생성할 손님 수
     public int customerNum;
@@ -46,9 +47,9 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
-     
-        
-        
+
+
+        spawnTime = Random.Range(10, 50);
         customerGroupMax = 4;
         
         count = 0;
@@ -60,32 +61,22 @@ public class CustomerManager : MonoBehaviour
 
     private void Update()
     {
-        if (count < customerGroupMax)
+        createTime += Time.deltaTime;
+
+        if (createTime >spawnTime)
         {
-            if (Input.GetMouseButtonDown(1))
+            createTime = 0;
+            spawnTime = Random.Range(10, 50);
+            if (count < customerGroupMax)
             {
 
-                //if (coun > TablePool.instance.table.Length) coun = 0;
                 SpawnCustomer();
                 coun++;
                 coun2 = 0;
-                
+
             }
-        }
-
-       
-        //for (int i = 0; i < TablePool.instance.table.Length; i++)
-        //{
-        //    if (TablePool.instance.table[i].chair[createNum].isSeat)
-        //    {
-        //        TablePool.instance.table[i].isOccupied = true;
-        //    }
-        //}
-        
-
+        } 
     }
-
-
 
     public void SpawnCustomer()
     {
@@ -105,10 +96,6 @@ public class CustomerManager : MonoBehaviour
         tablePool.table[coun].setCondition(coun2);
     }
 
-    public void SetCustomerSeat()
-    {
-
-    }
 
 
 }

@@ -19,7 +19,7 @@ public class Kitchen : MonoBehaviour
 
     public Dictionary<List<Item>, int> recipeBook; //레시피 딕셔너리
 
-    private List<Item>[] recipe; //레시피 
+    public List<Item>[] recipe; //레시피 
 
     public MixSlot[] mixSlot; //조합 슬롯들
 
@@ -37,39 +37,32 @@ public class Kitchen : MonoBehaviour
         mixSlot = mixSlotTf.GetComponentsInChildren<MixSlot>();
 
         counterSlot = counterSlotTf.GetComponentsInChildren<CounterSlot>();
+
+        for (int i = 0; i < counterSlot.Length; i++)
+        {
+            counterSlot[i].item = null;
+        }
+
         CounterSlotCount = 0;
 
         count = 0;
 
-        recipeCount = 3;
+        recipeCount = 10;
 
         instance = this;
         mixSlotList = new List<Item>();
 
         recipeBook = new Dictionary<List<Item>, int>();
 
-        recipe = new List<Item>[3];
+        recipe = new List<Item>[recipeCount];
 
-        recipe[0] = new List<Item>();
-        recipe[0].Add(new Item(00000, "apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
-        recipe[0].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        recipeBook.Add(recipe[0], 01000);//사과주스
-
-        recipe[1] = new List<Item>();
-        recipe[1].Add(new Item(00001, "straberry", "딸기", "잘익은 빨간 딸기", Item.ItemType.INGREDIENT));
-        recipe[1].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        recipeBook.Add(recipe[1], 01000);
+        RecipeReboot();
 
 
-        recipe[2] = new List<Item>();
-        recipe[2].Add(new Item(00002, "cherry", "체리", "탱탱한 체리", Item.ItemType.INGREDIENT));
-        recipe[2].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        recipeBook.Add(recipe[2], 01000);
 
-        
 
-        
 
+        gameObject.SetActive(false);
 
     }
 
@@ -131,20 +124,56 @@ public class Kitchen : MonoBehaviour
     private void RecipeReboot()
     {
         recipe[0] = new List<Item>();
-        recipe[0].Add(new Item(00000, "apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
-        recipe[0].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        recipeBook.Add(recipe[0], 01000);
+        //recipe[0].Add(new Item(00000, "apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
+        //recipe[0].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        //recipeBook.Add(recipe[0], 01000);
 
         recipe[1] = new List<Item>();
         recipe[1].Add(new Item(00001, "straberry", "딸기", "잘익은 빨간 딸기", Item.ItemType.INGREDIENT));
         recipe[1].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        recipeBook.Add(recipe[1], 01000);
-
-
+        recipeBook.Add(recipe[1], 01001);//딸기주스
+        
         recipe[2] = new List<Item>();
-        recipe[2].Add(new Item(00002, "cherry", "체리", "탱탱한 체리", Item.ItemType.INGREDIENT));
-        recipe[2].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        recipeBook.Add(recipe[2], 01000);
+        //recipe[2].Add(new Item(00002, "cherry", "체리", "탱탱한 체리", Item.ItemType.INGREDIENT));
+        //recipe[2].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        //recipeBook.Add(recipe[2], 01000);
+
+        recipe[3] = new List<Item>();
+        recipe[3].Add(new Item(00003, "grapes", "포도", "보라빛의 포도", Item.ItemType.INGREDIENT));
+        recipe[3].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        recipeBook.Add(recipe[3], 01003);//포도주스
+
+        recipe[4] = new List<Item>();
+
+
+        recipe[5] = new List<Item>();
+        recipe[5].Add(new Item(00005, "coffee", "커피콩", "모든 커피의 근본이 되는 재료", Item.ItemType.INGREDIENT));
+        recipe[5].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        recipeBook.Add(recipe[5], 01005);//다크커피
+
+        recipe[6] = new List<Item>();
+        recipe[6].Add(new Item(00005, "coffee", "커피콩", "모든 커피의 근본이 되는 재료", Item.ItemType.INGREDIENT));    
+        recipe[6].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        recipe[6].Add(new Item(00101, "milk", "우유", "뼈가 튼튼해지는 우유", Item.ItemType.INGREDIENT));
+        recipeBook.Add(recipe[6], 01006);//카페라떼
+
+        recipe[7] = new List<Item>();
+        recipe[7].Add(new Item(00005, "coffee", "커피콩", "모든 커피의 근본이 되는 재료", Item.ItemType.INGREDIENT));
+        recipe[7].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        recipe[7].Add(new Item(00101, "milk", "우유", "뼈가 튼튼해지는 우유", Item.ItemType.INGREDIENT));
+        recipe[7].Add(new Item(00006, "chocolate", "초콜렛", "달콤 씁씁한 매력의 간식이자 재료", Item.ItemType.INGREDIENT));
+        recipeBook.Add(recipe[7], 01007);//카페모카
+
+        recipe[8] = new List<Item>();
+        recipe[8].Add(new Item(00005, "coffee", "커피콩", "모든 커피의 근본이 되는 재료", Item.ItemType.INGREDIENT));
+        recipe[8].Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
+        recipe[8].Add(new Item(00007, "ice cream", "아이스크림", "사계절 시원하게 즐기는 간식", Item.ItemType.INGREDIENT));
+        recipeBook.Add(recipe[8], 01008);//아포카토
+
+        
+
+
+
     }
 
     private void ServeToCounter(int _res)
@@ -167,7 +196,7 @@ public class Kitchen : MonoBehaviour
 
         for (int i = 0; i < counterSlot.Length; i++)
         {
-            if (counterSlot[i].item.itemImage == null)
+            if (counterSlot[i].item == null || counterSlot[i].item.itemImage == null)
             {
                 counterSlot[i].SetItem(_item);
                 break;  
