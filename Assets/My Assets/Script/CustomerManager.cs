@@ -64,28 +64,12 @@ public class CustomerManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-
-                //if (coun > TablePool.instance.table.Length) coun = 0;
                 SpawnCustomer();
                 coun++;
-                coun2 = 0;
-                
+                coun2 = 0;   
             }
         }
-
-       
-        //for (int i = 0; i < TablePool.instance.table.Length; i++)
-        //{
-        //    if (TablePool.instance.table[i].chair[createNum].isSeat)
-        //    {
-        //        TablePool.instance.table[i].isOccupied = true;
-        //    }
-        //}
-        
-
     }
-
-
 
     public void SpawnCustomer()
     {
@@ -105,10 +89,6 @@ public class CustomerManager : MonoBehaviour
         tablePool.table[coun].setCondition(coun2);
     }
 
-    public void SetCustomerSeat()
-    {
-
-    }
 
 
 }

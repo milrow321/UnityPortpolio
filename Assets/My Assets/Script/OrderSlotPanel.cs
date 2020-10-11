@@ -13,4 +13,5 @@ public class OrderSlotPanel : MonoBehaviour
             slot = GetComponentsInChildren<OrderSlot>();
     }
 
+    
 }

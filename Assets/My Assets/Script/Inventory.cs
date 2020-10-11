@@ -57,7 +57,15 @@ public class Inventory : MonoBehaviour
         inventoryItemList.Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
         inventoryItemList.Add(new Item(00101, "milk", "우유", "뼈가 튼튼해지는 우유", Item.ItemType.INGREDIENT));
 
-        inventoryItemList.Add(new Item(10003, "w_047", "바람의 대검", "바람의 기운을 담은 대검", Item.ItemType.EQUIPMENT));
+
+
+        inventoryItemList.Add(new Item(00005, "coffee", "커피콩", "모든 커피의 근본이 되는 재료", Item.ItemType.INGREDIENT));
+        inventoryItemList.Add(new Item(00006, "chocolate", "초콜렛", "달콤 씁씁한 매력의 간식이자 재료", Item.ItemType.INGREDIENT));
+        inventoryItemList.Add(new Item(00007, "ice cream", "아이스크림", "사계절 시원하게 즐기는 간식", Item.ItemType.INGREDIENT));
+
+        
+
+        //inventoryItemList.Add(new Item(10003, "w_047", "바람의 대검", "바람의 기운을 담은 대검", Item.ItemType.EQUIPMENT));
 
 
         Color color = slots[0].icon.GetComponent<Image>().color;

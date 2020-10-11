@@ -24,7 +24,11 @@ public class Customer : MonoBehaviour
     private bool seatEmpty;
     private bool isMove;
     public bool recieved;
+
+    [SerializeField]
     private bool isExit;
+
+    private bool isOrder;
 
     private Item menuItem;//주문한 아이템(요리)
 
@@ -41,7 +45,7 @@ public class Customer : MonoBehaviour
     {
        
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
+        //agent.updateRotation = false;
         animator = GetComponentInChildren<Animator>();
         
     }
@@ -51,6 +55,7 @@ public class Customer : MonoBehaviour
         recieved = false;
         isMove = true;
         isExit = false;
+        isOrder = false;
         //FindTable();
         //chairCount = 0;
         //tableCount=0;
@@ -61,71 +66,74 @@ public class Customer : MonoBehaviour
     {
 
 
-        if (isMove) Move(tablePool);
+        if (isMove && !isExit) Move(tablePool);
         if(!isMove&&!isExit) Sit(tablePool.table[tableCount].chair[chairCount]);
-        if (isExit&& !isMove) Exit();
-        //if (isMove)
-        //{
-        //    Move();
-        //}
-        if (!isMove&&tablePool.table[tableCount].gotMenu)
+        if (recieved && !isExit && !isMove) Drink();
+        if (isExit) Exit();
+        
+        if (!isMove&&tablePool.table[tableCount].gotMenu&&!isOrder)
         {
             Order();
         }
 
-        if (recieved&&!isExit&& !isMove) Drink();
+        
         
     }
 
     public void Move(TablePool _tablePool)
     {
+        
         time += Time.deltaTime;
+        
+            agent.SetDestination(_tablePool.table[tableCount].chair[chairCount].transform.position);
+            var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
+            animator.transform.forward = dir;
+            animator.SetBool("isMove", true);
 
-        agent.SetDestination(_tablePool.table[tableCount].chair[chairCount].transform.position);
-        var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
-        animator.transform.forward = dir;
-        animator.SetBool("isMove", true);
+            if (Vector3.Distance(transform.position, _tablePool.table[tableCount].chair[chairCount].transform.position) < 1)
+            {
+                //animator.SetBool("isMove", false);
+                //Sit(_tablePool.table[tableCount].chair[chairCount]);
+                animator.SetBool("isMove", false);
+                isMove = false;
+            }
 
-        if (Vector3.Distance(transform.position, _tablePool.table[tableCount].chair[chairCount].transform.position) < 1)
-        {
-            //animator.SetBool("isMove", false);
-            //Sit(_tablePool.table[tableCount].chair[chairCount]);
-            animator.SetBool("isMove", false);
-            isMove = false;
-        }
-
-        if (time >= 10) agent.radius=0;
 
         
+
+        if (time >= 10) agent.radius = 0;
+
 
     }
 
     private void Sit(Chair chair)
     {
-        
+        isMove = false;
         animator.SetBool("isSeat", true);
         chair.SetCustomer(this);
 
         var dir = chair.parentTable.transform.position-transform.position;
         animator.transform.forward = dir;
         var posZ = new Vector3(0, 1, 0);
-        agent.transform.position = chair.transform.position+posZ;
+        animator.transform.position = chair.transform.position+posZ;
         agent.radius = 0;
+        
     }
 
     private void Order()
     {
-        int menu = 01000;
+        int[] menu= { 01001,01003, 01005, 01006, 01007, 01008 };
+        int num = Random.Range(0, 6);
         
-        DatabaseManager.instance.foodItemDictionary.TryGetValue(menu, out menuItem);
+        DatabaseManager.instance.foodItemDictionary.TryGetValue(menu[num], out menuItem);
 
         OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].SetItem(menuItem, this);
 
-       // orderSlot.SetItem(menuItem);
+        // orderSlot.SetItem(menuItem);
 
         //OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].icon.sprite = menuItem.itemImage;
-        
 
+        isOrder = true;
     }
 
     public void Find(int _tableCount, int _chairCount)
@@ -136,6 +144,7 @@ public class Customer : MonoBehaviour
 
     }
 
+    //주문목록의 주문을 없애는 함수 
     private void Drink()
     {
         OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].DeleteItem();
@@ -143,28 +152,31 @@ public class Customer : MonoBehaviour
         //Invoke("Pay()",30f);
     }
 
+    //돈 내는 함수
     private void Pay()
     {
         CafeManager.instance.gold += 50;
         isExit = true;
+        
         //Exit();
     }
 
+    //나갈때의 움직임 함수
     private void Exit()
     {
-        
-        
+        agent.radius = 0.3f;
         agent.SetDestination(exitPoint.position);
-
+        
         var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
         animator.transform.forward = dir;
-        
-        if(Vector3.Distance(transform.position,exitPoint.position)<1) Destroy(this.gameObject);
+
+        tablePool.table[tableCount].chair[chairCount].onCustomer = null;
+
+        if(Vector3.Distance(transform.position,exitPoint.position)<2) Destroy(this.gameObject);
         tablePool.table[tableCount].gotMenu = false;
         animator.SetBool("isMove", true);
         animator.SetBool("isSeat", false);
 
-        //this.gameObject.SetActive(false);
     }
 
 
