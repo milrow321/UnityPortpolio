@@ -7566,7 +7566,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 601555032}
   speed: 10
-  counter: {fileID: 1765017144}
   defPos: {fileID: 1853988559}
   orders: {fileID: 1210214070}
   counterTf: {fileID: 509825147}
@@ -20969,7 +20968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853988558}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -4.5584507, y: -0.77, z: 5.1492033}
+  m_LocalPosition: {x: -4.65, y: -1.57, z: 5.32}
   m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
   m_Children: []
   m_Father: {fileID: 791857554}

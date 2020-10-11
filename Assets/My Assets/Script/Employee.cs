@@ -18,8 +18,7 @@ public class Employee : MonoBehaviour
 
 
 
-    [SerializeField]
-    public Transform counter;
+    
 
     private int tableCount;
     private int chairCount;
@@ -49,7 +48,7 @@ public class Employee : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         tableDesPos = new Vector3(-2, 0, 1);
 
-       
+        
     }
 
     // Update is called once per frame
@@ -109,12 +108,13 @@ public class Employee : MonoBehaviour
 
     private void BackToCount()
     {
+        
         animator.SetBool("isMove", true);
         agent.SetDestination(defPos.position);
-        if (Vector3.Distance(defPos.position, transform.position) < 2)
+        if (Vector3.Distance(defPos.position, transform.position) < 1)
         {
             animator.SetBool("isMove", false);
-
+            agent.ResetPath();
         }
     }
 }

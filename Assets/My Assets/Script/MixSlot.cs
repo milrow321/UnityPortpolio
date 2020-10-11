@@ -11,7 +11,12 @@ public class MixSlot : MonoBehaviour
     
 
     public Image icon;
+    private RectTransform parent;
 
+    private void Start()
+    {
+        parent = transform.parent.GetComponent<RectTransform>();
+    }
 
     public void MixSetImage(Image _itemImage)
     {
@@ -25,4 +30,6 @@ public class MixSlot : MonoBehaviour
         icon.sprite = null;
 
     }
+
+    
 }
