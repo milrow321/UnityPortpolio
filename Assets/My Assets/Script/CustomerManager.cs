@@ -71,11 +71,29 @@ public class CustomerManager : MonoBehaviour
             {
 
                 SpawnCustomer();
-                coun++;
+                
                 coun2 = 0;
-
+                
             }
         } 
+        else if(Input.GetMouseButtonDown(1))
+        {
+            if (count < customerGroupMax)
+            {
+
+                SpawnCustomer();
+                //coun++;
+                coun2 = 0;
+                
+            }
+        }
+
+        
+       
+
+        
+
+
     }
 
     public void SpawnCustomer()
@@ -87,6 +105,12 @@ public class CustomerManager : MonoBehaviour
         {
             int cusNum = Random.Range(0, customer.Length);
             newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
+            for (int j = 0; j < tablePool.table.Length; j++)
+            {
+                if (tablePool.table[j].isOccupied) continue;
+                else coun = j;
+            }
+           
             newCus.Find(coun, coun2);
             newCus.numberTicket = coun * 4 + coun2;
             coun2++;

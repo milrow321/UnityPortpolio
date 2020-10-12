@@ -22,23 +22,35 @@ public class Customer : MonoBehaviour
     public int chairCount;
 
     private bool seatEmpty;
-    private bool isMove;
-    public bool recieved;
+    private bool isMove;//들어오는 중인가
+    public bool recieved;//주문한 음식을 받았는가
 
     [SerializeField]
-    private bool isExit;
+    private bool isExit;//나가는 중인가
 
-    private bool isOrder;
+    private bool isOrder;//주문 하였는가
+
+    
 
     private Item menuItem;//주문한 아이템(요리)
 
     private float time;
+    private float sitTime;//앉아 있는 시간
 
     public OrderSlot orderSlot;
 
     public int numberTicket;//손님이 들어온 순서를 설정
 
     public Transform exitPoint;
+
+
+    enum CUSTOMERSTETE
+    {
+        ENTER,
+        SIT,
+        EXIT
+    }
+    CUSTOMERSTETE customerState;     
 
     // Start is called before the first frame update
     private void Awake()
@@ -52,6 +64,7 @@ public class Customer : MonoBehaviour
 
     private void Start()
     {
+        customerState = CUSTOMERSTETE.ENTER;
         recieved = false;
         isMove = true;
         isExit = false;
@@ -64,38 +77,64 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if (isMove && !isExit) Move(tablePool);
-        if(!isMove&&!isExit) Sit(tablePool.table[tableCount].chair[chairCount]);
-        if (recieved && !isExit && !isMove) Drink();
-        if (isExit) Exit();
-        
-        if (!isMove&&tablePool.table[tableCount].gotMenu&&!isOrder)
+        switch (customerState)
         {
-            Order();
+            case CUSTOMERSTETE.ENTER:
+                Move();
+                break;
+            case CUSTOMERSTETE.SIT:
+                sitTime += Time.deltaTime;
+                if (!isMove && tablePool.table[tableCount].gotMenu && !isOrder)
+                {
+                    Order();
+                }
+                Sit(tablePool.table[tableCount].chair[chairCount]);
+                if (recieved) Drink();
+                if (sitTime > 50f)
+                {
+                    
+                    customerState = CUSTOMERSTETE.EXIT;
+                }
+                break;
+            case CUSTOMERSTETE.EXIT:
+                if(recieved) Pay();
+                Exit();
+                break;
         }
+
+
+
+        //if (isMove && !isExit) Move(tablePool);
+        //if(!isMove&&!isExit) Sit(tablePool.table[tableCount].chair[chairCount]);
+        //if (recieved && !isExit && !isMove) Drink();
+        //if (isExit) Exit();
+        
+        //if (!isMove&&tablePool.table[tableCount].gotMenu&&!isOrder)
+        //{
+        //    Order();
+        //}
 
         
         
     }
 
-    public void Move(TablePool _tablePool)
+    public void Move()
     {
         
         time += Time.deltaTime;
         
-            agent.SetDestination(_tablePool.table[tableCount].chair[chairCount].transform.position);
+            agent.SetDestination(tablePool.table[tableCount].chair[chairCount].transform.position);
             var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
             animator.transform.forward = dir;
             animator.SetBool("isMove", true);
 
-            if (Vector3.Distance(transform.position, _tablePool.table[tableCount].chair[chairCount].transform.position) < 1)
+            if (Vector3.Distance(transform.position, tablePool.table[tableCount].chair[chairCount].transform.position) < 1)
             {
                 //animator.SetBool("isMove", false);
                 //Sit(_tablePool.table[tableCount].chair[chairCount]);
                 animator.SetBool("isMove", false);
-                isMove = false;
+            isMove = false;
+            customerState = CUSTOMERSTETE.SIT;
             }
 
 
@@ -148,7 +187,23 @@ public class Customer : MonoBehaviour
     private void Drink()
     {
         OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].DeleteItem();
-        Pay();
+
+        
+        //Chair[] friends =tablePool.table[tableCount].GetComponentsInChildren<Chair>();
+        //bool[] friendRecieved;
+        //friendRecieved = new bool[tablePool.table[tableCount].chair.Length];
+
+        //for (int i = 0; i < friends.Length; i++)
+        //{   
+        //    if (friends[i].onCustomer == null) break;
+        //    friendRecieved[i] = friends[i].onCustomer.recieved;
+        //}
+        //for (int i = 0; i < friendRecieved.Length; i++)
+        //{
+        //    if (!friendRecieved[i]) return;
+        //    else Pay();
+        //}
+        
         //Invoke("Pay()",30f);
     }
 
@@ -164,12 +219,16 @@ public class Customer : MonoBehaviour
     //나갈때의 움직임 함수
     private void Exit()
     {
+        if(OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].item!=null)
+            OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].DeleteItem();
+
         agent.radius = 0.3f;
         agent.SetDestination(exitPoint.position);
         
         var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
         animator.transform.forward = dir;
 
+        tablePool.table[tableCount].isOccupied = false;
         tablePool.table[tableCount].chair[chairCount].onCustomer = null;
 
         if(Vector3.Distance(transform.position,exitPoint.position)<2) Destroy(this.gameObject);
