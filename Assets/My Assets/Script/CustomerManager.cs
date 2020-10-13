@@ -41,7 +41,7 @@ public class CustomerManager : MonoBehaviour
 
     public TablePool tablePool;
 
-    List<Table> tableAvail = new List<Table>();
+    List<Table> tableAvail;
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
-
+        tableAvail = new List<Table>();
 
         spawnTime = Random.Range(10, 50);
         customerGroupMax = 4;
@@ -69,40 +69,60 @@ public class CustomerManager : MonoBehaviour
     {
         createTime += Time.deltaTime;
 
-        //if (createTime >spawnTime)
-        //{
-        //    createTime = 0;
-        //    spawnTime = Random.Range(10, 50);
-        //    if (count < customerGroupMax)
-        //    {
-
-        //        SpawnCustomer();
-                
-        //        coun2 = 0;
-                
-        //    }
-        //} 
-         if(Input.GetMouseButtonDown(1))
+        for (int j = 0; j < tablePool.table.Length; j++)
         {
-            //for (int i = 0; i < tablePool.table.Length; i++)
-            //{
+            if (tablePool.table[j].isReserved) continue;
+            else
+            {
+                coun = j;
+                break;
+            }
+        }
+        
 
-            //    if (tablePool.table[i].isReserved) tableAvail.Add(tablePool.table[i]);
-            //    else continue;
-            //}
-            //count = tableAvail.Count;
+        for (int i = 0; i < tablePool.table.Length; i++)
+        {
+
+            if (tablePool.table[i].isReserved) tableAvail.Add(tablePool.table[i]);
+            else continue;
+        }
+        count = tableAvail.Count;
+        tableAvail.Clear();
+
+        if (createTime > spawnTime)
+        {
+            createTime = 0;
+            spawnTime = Random.Range(10, 50);
             if (count < customerGroupMax)
             {
 
                 SpawnCustomer();
-                
+
                 coun2 = 0;
-                
+
             }
         }
 
 
-        
+
+
+        //if (Input.GetMouseButtonDown(1))
+        //{
+
+        //    if (count < customerGroupMax)
+        //    {
+
+        //        SpawnCustomer();
+
+
+
+        //    }
+        //}
+
+        coun2 = 0;
+
+
+
 
 
     }
@@ -111,23 +131,18 @@ public class CustomerManager : MonoBehaviour
     {
         createNum = Random.Range(1, 5);
 
+        tablePool.table[coun].isReserved = true;
 
         for (int i = 0; i < createNum; i++)
         {
             int cusNum = Random.Range(0, customer.Length);
             newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
-            for (int j = 0; j < tablePool.table.Length; j++)
-            {
-                if (tablePool.table[j].isReserved) continue;
-                else
-                {
-                    coun = j;
-                    break;
-                }
-            }
-           
-            newCus.Find(coun, coun2);
             
+
+            //newCus.Find(coun, coun2);
+            newCus.tableCount = coun;
+            newCus.chairCount = coun2;
+
             newCus.numberTicket = customerNum;
             customerNum++;
             coun2++;
@@ -135,7 +150,9 @@ public class CustomerManager : MonoBehaviour
         }
         //tablePool.table[coun].isOccupied=true;
         tablePool.table[coun].setCondition(coun2);
-        tablePool.table[coun].isReserved=true;
+        
+
+        
     }
 
 

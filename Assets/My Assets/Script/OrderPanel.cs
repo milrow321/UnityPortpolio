@@ -13,7 +13,8 @@ public class OrderPanel : MonoBehaviour
 
     private void Start()
     {
-        
+        this.gameObject.SetActive(false);
+
         instance = this;
 
         orderSlotPanels = GetComponentsInChildren<OrderSlotPanel>();

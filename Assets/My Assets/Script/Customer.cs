@@ -230,17 +230,18 @@ public class Customer : MonoBehaviour
 
         tablePool.table[tableCount].isOccupied = false;
         tablePool.table[tableCount].chair[chairCount].onCustomer = null;
+        tablePool.table[tableCount].isReserved = false;
 
         tablePool.table[tableCount].gotMenu = false;
         animator.SetBool("isMove", true);
         animator.SetBool("isSeat", false);
-        tablePool.table[tableCount].isReserved = false;
+        
 
         if (Vector3.Distance(transform.position, exitPoint.position) < 2)
         {
             Destroy(this.gameObject);
             
-            Pay();
+           if(recieved) Pay();
         }
         
     }
