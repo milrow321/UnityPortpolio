@@ -94,7 +94,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].RemoveItem();
-            slots[i].gameObject.SetActive(false);
+            //slots[i].gameObject.SetActive(false);
 
         }
 
@@ -151,36 +151,58 @@ public class Inventory : MonoBehaviour
 
     public void AddItemToInven(Item _item, int _itemCount)
     {
-        //if ((from tem in inventoryItemList select tem).SequenceEqual(_item, new RecipeComparer())
-        //{
+        
 
-        //}
+
 
         if (inventoryItemList.Contains(_item, new RecipeComparer()))
         {
             for (int i = 0; i < inventoryItemList.Count; i++)
             {
-                if (inventoryItemList[i] == _item)
+                if (inventoryItemList[i].itemID == _item.itemID)
                 {
-                    inventoryItemList[i].itemCount += _item.itemCount;
+                    inventoryItemList[i].itemCount += _itemCount;
                 }
             }
         }
         else inventoryItemList.Add(_item);
 
-        Color color = slots[0].icon.GetComponent<Image>().color;
+
+        RemoveSlot();
+        //slots = tf.GetComponentsInChildren<ItemSlot>();
+        Color color = slots[0].icon.color;
         color.a = 1f;
         for (int i = 0; i < inventoryItemList.Count; i++)
         {
 
-            slots[i].icon.GetComponent<Image>().color = color;
+            slots[i].icon.color = color;
             slots[i].Additem(inventoryItemList[i]);
 
         }
 
     }
 
+    public void RemoveFromInven(Item _item, int _itemCount)
+    {
+        for (int i = 0; i < inventoryItemList.Count; i++)
+        {
+            if (inventoryItemList[i].itemID == _item.itemID)
+            {
+                inventoryItemList[i].itemCount -= _itemCount;
+            }
+        }
+        RemoveSlot();
+        //slots = tf.GetComponentsInChildren<ItemSlot>();
+        Color color = slots[0].icon.color;
+        color.a = 1f;
+        for (int i = 0; i < inventoryItemList.Count; i++)
+        {
 
+            slots[i].icon.color = color;
+            slots[i].Additem(inventoryItemList[i]);
+
+        }
+    }
 
     
 

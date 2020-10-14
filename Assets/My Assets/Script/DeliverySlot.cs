@@ -59,6 +59,12 @@ public class DeliverySlot : MonoBehaviour
         
     }
 
+    public void ResetSlot()
+    {
+        number = 0;
+        numberText.text = number.ToString();
+    }
+
     public void ShowStock(Item _item)
     {
          

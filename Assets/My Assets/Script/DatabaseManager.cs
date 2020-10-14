@@ -46,12 +46,12 @@ public class DatabaseManager : MonoBehaviour
 
 
         //foodItemDictionary.Add(01000, new Item(01000, "vine", "사과주스", "주스입니다", Item.ItemType.FOOD));
-        foodItemDictionary.Add(01001, new Item(01001, "Coffee_128_52", "딸기주스", "딸기를 갈아 만든 주스", Item.ItemType.FOOD));
-        foodItemDictionary.Add(01003, new Item(01003, "Coffee_128_44", "포도주스","포도를 갈아 만든 주스", Item.ItemType.FOOD));
-        foodItemDictionary.Add(01005,new Item(01005, "Coffee_128_01","다크커피","가장 베이직한 커피", Item.ItemType.FOOD));
-        foodItemDictionary.Add(01006,new Item(01006,"Coffee_128_05","카페라떼","부드러운 우유를 넣은 커피",Item.ItemType.FOOD));
-        foodItemDictionary.Add(01007, new Item(01007, "Coffee_128_04", "카페모카", "달콤한 초코와 우유를 넣은 커피", Item.ItemType.FOOD));
-        foodItemDictionary.Add(01008, new Item(01008, "Coffee_128_02", "아포카토", "커피에 아이스크림을 넣어 탄생한 커피", Item.ItemType.FOOD));
+        foodItemDictionary.Add(01001, new Item(01001,20, "Coffee_128_52", "딸기주스", "딸기를 갈아 만든 주스", Item.ItemType.FOOD));
+        foodItemDictionary.Add(01003, new Item(01003,24, "Coffee_128_44", "포도주스","포도를 갈아 만든 주스", Item.ItemType.FOOD));
+        foodItemDictionary.Add(01005,new Item(01005,30, "Coffee_128_01","다크커피","가장 베이직한 커피", Item.ItemType.FOOD));
+        foodItemDictionary.Add(01006,new Item(01006,35,"Coffee_128_05","카페라떼","부드러운 우유를 넣은 커피",Item.ItemType.FOOD));
+        foodItemDictionary.Add(01007, new Item(01007,40, "Coffee_128_04", "카페모카", "달콤한 초코와 우유를 넣은 커피", Item.ItemType.FOOD));
+        foodItemDictionary.Add(01008, new Item(01008,38, "Coffee_128_02", "아포카토", "커피에 아이스크림을 넣어 탄생한 커피", Item.ItemType.FOOD));
         
 
         //itemList.Add(new Item(01000, "vine", "사과주스", "주스입니다", Item.ItemType.FOOD));

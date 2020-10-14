@@ -12,12 +12,14 @@ public class Grocery : MonoBehaviour
 
     public GameObject slotPref;
     private DeliverySlot[] deliverySlot;
+
+    [SerializeField]
     private int tatal;
 
     private List<Item> productList;// 판매리스트
     private Item item;
     int purchaseNum;//구매할 갯수
-    private string confirmText;
+    public Text confirmText;
 
     void Start()
     {
@@ -30,15 +32,18 @@ public class Grocery : MonoBehaviour
         productList.Add(new Item(00006,20, "chocolate", "초콜렛", "달콤 씁씁한 매력의 간식이자 재료", Item.ItemType.INGREDIENT));
         productList.Add(new Item(00007,25, "ice cream", "아이스크림", "사계절 시원하게 즐기는 간식", Item.ItemType.INGREDIENT));
 
+        deliverySlot = new DeliverySlot[productList.Count];
 
         for (int i = 0; i < productList.Count; i++)
         {
            var slot=Instantiate(slotPref, slotParent);
-           deliverySlot = new DeliverySlot[productList.Count];
+          
            deliverySlot[i]= slot.GetComponent<DeliverySlot>();
            deliverySlot[i].SetItem(productList[i]); 
             
         }
+
+
     }
 
     private void Update()
@@ -58,12 +63,12 @@ public class Grocery : MonoBehaviour
             tatal += deliverySlot[i].number*deliverySlot[i].price;
         }
     }
-
+     
     public void Confirming()
     {
         Calculate();
         confirmPanel.SetActive(true);
-        confirmText = "총" + tatal.ToString() + "골드 입니다 주문하시겠습니까 ?";
+        confirmText.text = "총" + tatal.ToString() + "골드 입니다 주문하시겠습니까 ?";
         
     }
 
@@ -73,7 +78,10 @@ public class Grocery : MonoBehaviour
         for (int i = 0; i < deliverySlot.Length; i++)
         {
             inventory.AddItemToInven(deliverySlot[i].item, deliverySlot[i].number);
-
+            deliverySlot[i].ResetSlot();
+            tatal = 0;
         }
+
+        confirmPanel.SetActive(false);
     }
 }

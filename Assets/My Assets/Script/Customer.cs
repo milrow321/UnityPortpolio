@@ -210,7 +210,7 @@ public class Customer : MonoBehaviour
     //돈 내는 함수
     private void Pay()
     {
-        CafeManager.instance.gold += 50;
+        CafeManager.instance.gold += menuItem.price;
         isExit = true;
         
         //Exit();

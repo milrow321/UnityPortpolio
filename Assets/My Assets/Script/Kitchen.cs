@@ -32,6 +32,8 @@ public class Kitchen : MonoBehaviour
 
     public int CounterSlotCount;
 
+    public Inventory inventory;
+
     private void Start()
     {
         mixSlot = mixSlotTf.GetComponentsInChildren<MixSlot>();
@@ -60,9 +62,10 @@ public class Kitchen : MonoBehaviour
 
 
 
-
+        inventory = GetComponentInChildren<Inventory>();
 
         gameObject.SetActive(false);
+
 
     }
 
@@ -73,6 +76,11 @@ public class Kitchen : MonoBehaviour
 
     public void Cook()
     {
+        for (int i = 0; i < inventory.inventoryItemList.Count; i++)
+        {
+            if (inventory.inventoryItemList[i].itemCount == 0) return;
+        }
+       
         if (mixSlotList.Count > 0)
         {
             for (int i = 0; i < recipeCount; i++)
@@ -84,8 +92,14 @@ public class Kitchen : MonoBehaviour
                     {
                         ServeToCounter(res);
                         //DatabaseManager.instance.foodItemDictionary.
+                        for (int j = 0; j < mixSlotList.Count; j++)
+                        {
 
-                        //Debug.Log(res);
+                            inventory.RemoveFromInven(mixSlotList[j], 1);
+                        }
+                        
+ 
+                            //Debug.Log(res);
                         mixSlotList.Clear();
                         mixSlotList = new List<Item>();
                         for (int j = 0; j < mixSlot.Length; j++)

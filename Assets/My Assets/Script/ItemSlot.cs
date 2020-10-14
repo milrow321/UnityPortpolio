@@ -40,7 +40,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
 
     public void RemoveItem()
     {
-       // itemName_Text.text = "";
+        // itemName_Text.text = "";
+        item = null;
         itemCount_Text.text = "";
         icon.sprite = null;
     }
