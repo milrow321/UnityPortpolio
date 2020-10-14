@@ -12,11 +12,13 @@ public class Item
     public string itemDescription;
     public int itemCount;
     public Sprite itemImage;
-    
+    public int price;
+
     public ItemType itemType;
     
     public GameObject itemPrefab;
     public int grade;
+    
 
     public string weaponType;
 
@@ -45,5 +47,16 @@ public class Item
         itemImage = Resources.Load("Food icons Pack/PNG/"+_itemImageName, typeof(Sprite))as Sprite;
     }
 
-   
+    public Item(int _itemID, int _price, string _itemImageName, string _itemName, string _itemDes, ItemType _itemType, int _itemCount = 1)
+    {
+        itemID = _itemID;
+        price = _price;
+        itemImageName = _itemImageName;
+        itemName = _itemName;
+        itemDescription = _itemDes;
+        itemType = _itemType;
+        itemCount = _itemCount;
+        itemImage = Resources.Load("Food icons Pack/PNG/" + _itemImageName, typeof(Sprite)) as Sprite;
+        
+    }
 }

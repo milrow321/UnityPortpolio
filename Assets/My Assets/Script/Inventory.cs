@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Inventory : MonoBehaviour
 
     private ItemSlot[] slots; //인벤토리 슬롯들
 
-    private List<Item> inventoryItemList; // 플레이어가 소지중인 아이템 리스트
+    public List<Item> inventoryItemList; // 플레이어가 소지중인 아이템 리스트
     private List<Item> inventoryTabList; //선택한 카테고리에 따른 아이템 이스트
 
     public Text Description_Text; //부연 설명
@@ -51,17 +52,17 @@ public class Inventory : MonoBehaviour
         slots = tf.GetComponentsInChildren<ItemSlot>();
 
         //inventoryItemList.Add(new Item(00000, "apple", "사과", "잘익은 빨간 사과", Item.ItemType.INGREDIENT));
-        inventoryItemList.Add(new Item(00001, "straberry", "딸기", "잘익은 빨간 딸기", Item.ItemType.INGREDIENT));
+        inventoryItemList.Add(new Item(00001, "straberry", "딸기", "잘익은 빨간 딸기", Item.ItemType.INGREDIENT,10));
         //inventoryItemList.Add(new Item(00002, "cherry", "체리", "탱탱한 체리", Item.ItemType.INGREDIENT));
-        inventoryItemList.Add(new Item(00003, "grapes", "포도", "보라빛의 포도", Item.ItemType.INGREDIENT));
-        inventoryItemList.Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT));
-        inventoryItemList.Add(new Item(00101, "milk", "우유", "뼈가 튼튼해지는 우유", Item.ItemType.INGREDIENT));
+        inventoryItemList.Add(new Item(00003, "grapes", "포도", "보라빛의 포도", Item.ItemType.INGREDIENT, 10));
+        inventoryItemList.Add(new Item(00100, "water", "물", "모든 음료의 기본이 되는 맑은 물", Item.ItemType.INGREDIENT, 10));
+        inventoryItemList.Add(new Item(00101, "milk", "우유", "뼈가 튼튼해지는 우유", Item.ItemType.INGREDIENT, 10));
 
 
 
-        inventoryItemList.Add(new Item(00005, "coffee", "커피콩", "모든 커피의 근본이 되는 재료", Item.ItemType.INGREDIENT));
-        inventoryItemList.Add(new Item(00006, "chocolate", "초콜렛", "달콤 씁씁한 매력의 간식이자 재료", Item.ItemType.INGREDIENT));
-        inventoryItemList.Add(new Item(00007, "ice cream", "아이스크림", "사계절 시원하게 즐기는 간식", Item.ItemType.INGREDIENT));
+        inventoryItemList.Add(new Item(00005, "coffee", "커피콩", "모든 커피의 근본이 되는 재료", Item.ItemType.INGREDIENT, 10));
+        inventoryItemList.Add(new Item(00006, "chocolate", "초콜렛", "달콤 씁씁한 매력의 간식이자 재료", Item.ItemType.INGREDIENT, 10));
+        inventoryItemList.Add(new Item(00007, "ice cream", "아이스크림", "사계절 시원하게 즐기는 간식", Item.ItemType.INGREDIENT, 10));
 
         
 
@@ -148,7 +149,36 @@ public class Inventory : MonoBehaviour
        
     }
 
-   
+    public void AddItemToInven(Item _item, int _itemCount)
+    {
+        //if ((from tem in inventoryItemList select tem).SequenceEqual(_item, new RecipeComparer())
+        //{
+
+        //}
+
+        if (inventoryItemList.Contains(_item, new RecipeComparer()))
+        {
+            for (int i = 0; i < inventoryItemList.Count; i++)
+            {
+                if (inventoryItemList[i] == _item)
+                {
+                    inventoryItemList[i].itemCount += _item.itemCount;
+                }
+            }
+        }
+        else inventoryItemList.Add(_item);
+
+        Color color = slots[0].icon.GetComponent<Image>().color;
+        color.a = 1f;
+        for (int i = 0; i < inventoryItemList.Count; i++)
+        {
+
+            slots[i].icon.GetComponent<Image>().color = color;
+            slots[i].Additem(inventoryItemList[i]);
+
+        }
+
+    }
 
 
 
