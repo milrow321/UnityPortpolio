@@ -11,6 +11,9 @@ public class CameraMove : MonoBehaviour
     Vector3 movePos;
 
     public GameObject cookUI;
+    public GameObject settingUI;
+    public GameObject recipeUI;
+    public GameObject deliveryUI;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,7 @@ public class CameraMove : MonoBehaviour
     {
         
 
-        if (!cookUI.activeSelf)
+        if (!cookUI.activeSelf&&!settingUI.activeSelf && !recipeUI.activeSelf && !deliveryUI.activeSelf)
         {
             //if (transform.position.x > -4 || transform.position.x < 10 || transform.position.y > 10 || transform.position.y < 30)
             

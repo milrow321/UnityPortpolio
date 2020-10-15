@@ -132,7 +132,7 @@ public class CustomerManager : MonoBehaviour
         createNum = Random.Range(1, 5);
 
         tablePool.table[coun].isReserved = true;
-
+        CafeManager.instance.visitorNum += createNum;
         for (int i = 0; i < createNum; i++)
         {
             int cusNum = Random.Range(0, customer.Length);

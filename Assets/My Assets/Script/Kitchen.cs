@@ -85,6 +85,7 @@ public class Kitchen : MonoBehaviour
         {
             for (int i = 0; i < recipeCount; i++)
             {
+                if (recipe[i] == null) continue;
                 if ((from tem in mixSlotList select tem).SequenceEqual(recipe[i], new RecipeComparer()))
                 {
                     mixSlotList = recipe[i];
@@ -97,9 +98,9 @@ public class Kitchen : MonoBehaviour
 
                             inventory.RemoveFromInven(mixSlotList[j], 1);
                         }
-                        
- 
-                            //Debug.Log(res);
+
+
+                        //Debug.Log(res);
                         mixSlotList.Clear();
                         mixSlotList = new List<Item>();
                         for (int j = 0; j < mixSlot.Length; j++)
@@ -112,7 +113,7 @@ public class Kitchen : MonoBehaviour
                         }
                     }
                 }
-
+                
             }
         }
         else return;

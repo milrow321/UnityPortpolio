@@ -43,7 +43,7 @@ public class Grocery : MonoBehaviour
             
         }
 
-
+        gameObject.SetActive(false);
     }
 
     private void Update()
@@ -75,6 +75,7 @@ public class Grocery : MonoBehaviour
     public void Purchase()
     {
         CafeManager.instance.gold -= tatal;
+        CafeManager.instance.goldOutput += tatal;
         for (int i = 0; i < deliverySlot.Length; i++)
         {
             inventory.AddItemToInven(deliverySlot[i].item, deliverySlot[i].number);

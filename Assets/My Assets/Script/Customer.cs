@@ -211,6 +211,7 @@ public class Customer : MonoBehaviour
     private void Pay()
     {
         CafeManager.instance.gold += menuItem.price;
+        CafeManager.instance.goldInput += menuItem.price;
         isExit = true;
         
         //Exit();

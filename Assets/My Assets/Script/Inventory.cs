@@ -22,22 +22,13 @@ public class Inventory : MonoBehaviour
     public List<Item> inventoryItemList; // 플레이어가 소지중인 아이템 리스트
     private List<Item> inventoryTabList; //선택한 카테고리에 따른 아이템 이스트
 
-    public Text Description_Text; //부연 설명
-    public string[] tabDescription; //탭 부연 설명
-
+    //public GameObject slotPref;
     public Transform tf; //slot 부모 객체
 
     //public GameObject go; //인벤토리 활성화 비활성화
     public GameObject[] selectedTabImage;
 
-    private int selectedItem; //선택된 아이템
-    private int selectedTab; //선택됨 탭
-
-    private bool activated; //인벤토리 활성화시 true
-    private bool tabActivated; //탭 활성화시 true
-    private bool itemActivated;
-    private bool stopKeyInput; //키입력 제한
-    private bool preventExec; //중복실행 제한
+    
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
 
@@ -72,9 +63,14 @@ public class Inventory : MonoBehaviour
         Color color = slots[0].icon.GetComponent<Image>().color;
         color.a = 1f;
 
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].gameObject.SetActive(false);
+        }
+
         for (int i = 0; i<inventoryItemList.Count; i++)
         {
-            
+            slots[i].gameObject.SetActive(true);
             slots[i].icon.GetComponent<Image>().color = color;
             slots[i].Additem(inventoryItemList[i]);
             
@@ -83,11 +79,6 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void SelectTab(int _selectTab)
-    {
-        selectedTab = _selectTab;
-        ShowItem();
-    }
 
     public void RemoveSlot()
     {
@@ -101,53 +92,53 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void ShowItem()
-    {
-        inventoryTabList.Clear();
-        RemoveSlot();
+    //public void ShowItem()
+    //{
+    //    inventoryTabList.Clear();
+    //    RemoveSlot();
         
 
-        switch (selectedTab)
-        {
-            case 0:
-                for (int i = 0; i < inventoryItemList.Count; i++)
-                {
-                    if (Item.ItemType.INGREDIENT == inventoryItemList[i].itemType)
-                    {
-                        inventoryTabList.Add(inventoryItemList[i]);
+    //    switch (selectedTab)
+    //    {
+    //        case 0:
+    //            for (int i = 0; i < inventoryItemList.Count; i++)
+    //            {
+    //                if (Item.ItemType.INGREDIENT == inventoryItemList[i].itemType)
+    //                {
+    //                    inventoryTabList.Add(inventoryItemList[i]);
                         
-                    }
-                }
-                break;
-            case 1:
-                for (int i = 0; i < inventoryItemList.Count; i++)
-                {
-                    if (Item.ItemType.EQUIPMENT == inventoryItemList[i].itemType)
-                    {
-                        inventoryTabList.Add(inventoryItemList[i]);
+    //                }
+    //            }
+    //            break;
+    //        case 1:
+    //            for (int i = 0; i < inventoryItemList.Count; i++)
+    //            {
+    //                if (Item.ItemType.EQUIPMENT == inventoryItemList[i].itemType)
+    //                {
+    //                    inventoryTabList.Add(inventoryItemList[i]);
                         
-                    }
-                }
-                break;
-            case 2:
-                for (int i = 0; i < inventoryItemList.Count; i++)
-                {
-                    if (Item.ItemType.USE == inventoryItemList[i].itemType)
-                    {
-                        inventoryTabList.Add(inventoryItemList[i]);
+    //                }
+    //            }
+    //            break;
+    //        case 2:
+    //            for (int i = 0; i < inventoryItemList.Count; i++)
+    //            {
+    //                if (Item.ItemType.USE == inventoryItemList[i].itemType)
+    //                {
+    //                    inventoryTabList.Add(inventoryItemList[i]);
                         
-                    }
-                }
-                break;
-        }
+    //                }
+    //            }
+    //            break;
+    //    }
 
-        for(int i=0;i<inventoryTabList.Count;i++)
-        {
-            slots[i].gameObject.SetActive(true);
-            slots[i].Additem(inventoryTabList[i]);
-        }
+    //    for(int i=0;i<inventoryTabList.Count;i++)
+    //    {
+    //        slots[i].gameObject.SetActive(true);
+    //        slots[i].Additem(inventoryTabList[i]);
+    //    }
        
-    }
+    //}
 
     public void AddItemToInven(Item _item, int _itemCount)
     {
