@@ -6,17 +6,40 @@ using UnityEngine.UI;
 public class Sound : MonoBehaviour
 {
     public Slider volumeSd;
+    public Slider buttonVolSd;
     public AudioSource audio;
+    public AudioSource buttonAudioY;
+    public AudioSource buttonAudioN;
     private float baseVol;
+    private float buttonBaseVol;
 
     public GameObject settingPanel;
+    public GameObject canvas;
+    private Button[] buttons;
 
     // Start is called before the first frame update
     void Start()
     {
-        baseVol = PlayerPrefs.GetFloat("baseVol", 1f);
+        buttonBaseVol = PlayerPrefs.GetFloat("buttonBaseVol",0.5f);
+        buttonVolSd.value = buttonBaseVol;
+        buttonAudioY.volume = buttonVolSd.value;
+        buttonAudioN.volume = buttonVolSd.value;
+
+
+        baseVol = PlayerPrefs.GetFloat("baseVol", 0.5f);
         volumeSd.value = baseVol;
         audio.volume = volumeSd.value;
+
+
+        //buttons = canvas.GetComponentsInChildren<Button>();
+        //for (int i = 0; i < buttons.Length; i++)
+        //{
+            
+        //    if (buttons[i].CompareTag("YesButton"))
+        //    { 
+        //    }
+        //}
+        
     }
 
     // Update is called once per frame
@@ -26,6 +49,11 @@ public class Sound : MonoBehaviour
 
         baseVol = volumeSd.value;
         PlayerPrefs.SetFloat("baseVol", baseVol);
+
+        buttonAudioY.volume = buttonVolSd.value;
+        buttonAudioN.volume = buttonVolSd.value;
+        buttonBaseVol = buttonVolSd.value;
+        PlayerPrefs.SetFloat("buttonBaseVol", buttonBaseVol);
     }
 
    

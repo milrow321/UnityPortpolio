@@ -9,6 +9,8 @@ TagManager:
   - NPC
   - Slot
   - Item
+  - NoButton
+  - YesButton
   layers:
   - Default
   - TransparentFX

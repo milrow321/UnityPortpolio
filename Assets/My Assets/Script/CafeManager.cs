@@ -53,8 +53,8 @@ public class CafeManager : MonoBehaviour
         }
         goldText.text = gold.ToString();
 
-        if (settingUI.activeSelf) Time.timeScale = 0;
-        else Time.timeScale = 1;
+        //if (settingUI.activeSelf) Time.timeScale = 0;
+        //else if(settingUI.activeSelf) Time.timeScale = 1;
 
         if (Time.timeScale == 0) pauseShadow.SetActive(true);
         else pauseShadow.SetActive(false);
