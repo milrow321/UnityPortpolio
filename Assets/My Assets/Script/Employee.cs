@@ -38,6 +38,8 @@ public class Employee : MonoBehaviour
 
     public TablePool tablePool;
 
+    float tempTime;//메뉴전달 함수의 약간 텀을 주기 위함
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,7 @@ public class Employee : MonoBehaviour
         //table = tablePool.GetComponentsInChildren<TableSeat>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        tableDesPos = new Vector3(-2, 0, 1);
+        tableDesPos = new Vector3(-2, 0, 2);
 
         defaltDir = transform.forward;
     }
@@ -58,15 +60,20 @@ public class Employee : MonoBehaviour
 
         for (int i = 0; i < tablePool.table.Length; i++)
         {
+            
             if (tablePool.table[i].isOccupied && !tablePool.table[i].gotMenu)
             {
+                tempTime += Time.deltaTime;
                 tableCount = i;
                 //Invoke("PassMenu", 10f);
-
-                PassMenu();
-                break;
+                if (tempTime >= 1.5f)
+                {
+                    PassMenu();
+                    tempTime = 0;
+                    break;
+                }
             }
-            
+            else continue;
         }
 
         for (int i = 0; i < counterSlot.Length; i++)

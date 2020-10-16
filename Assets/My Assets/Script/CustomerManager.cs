@@ -130,8 +130,8 @@ public class CustomerManager : MonoBehaviour
     public void SpawnCustomer()
     {
         createNum = Random.Range(1, 5);
+        tablePool.table[coun].isReserved = true;
 
-        
         CafeManager.instance.visitorNum += createNum;
         for (int i = 0; i < createNum; i++)
         {
@@ -146,7 +146,7 @@ public class CustomerManager : MonoBehaviour
             newCus.numberTicket = customerNum;
             customerNum++;
             coun2++;
-            tablePool.table[coun].isReserved = true;
+            
         }
         //tablePool.table[coun].isOccupied=true;
         tablePool.table[coun].setCondition(coun2);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Sound : MonoBehaviour
 {
     public Slider volumeSd;
@@ -31,15 +32,8 @@ public class Sound : MonoBehaviour
         audio.volume = volumeSd.value;
 
 
-        //buttons = canvas.GetComponentsInChildren<Button>();
-        //for (int i = 0; i < buttons.Length; i++)
-        //{
-            
-        //    if (buttons[i].CompareTag("YesButton"))
-        //    { 
-        //    }
-        //}
         
+
     }
 
     // Update is called once per frame
@@ -70,4 +64,6 @@ public class Sound : MonoBehaviour
             settingPanel.SetActive(true);
         }
     }
+
+    
 }

@@ -220,6 +220,12 @@ public class Customer : MonoBehaviour
     //나갈때의 움직임 함수
     private void Exit()
     {
+        tablePool.table[tableCount].isOccupied = false;
+        tablePool.table[tableCount].chair[chairCount].onCustomer = null;
+
+
+        tablePool.table[tableCount].gotMenu = false;
+
         if (OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].item != null)
             OrderPanel.instance.orderSlotPanels[tableCount].slot[chairCount].DeleteItem();
 
@@ -229,11 +235,8 @@ public class Customer : MonoBehaviour
         var dir = new Vector3(agent.steeringTarget.x, transform.position.y, agent.steeringTarget.z) - transform.position;
         animator.transform.forward = dir;
 
-        tablePool.table[tableCount].isOccupied = false;
-        tablePool.table[tableCount].chair[chairCount].onCustomer = null;
         
-
-        tablePool.table[tableCount].gotMenu = false;
+        
         animator.SetBool("isMove", true);
         animator.SetBool("isSeat", false);
         
