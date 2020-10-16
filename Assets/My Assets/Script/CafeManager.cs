@@ -41,7 +41,7 @@ public class CafeManager : MonoBehaviour
     private void Update()
     {
         dayTime += Time.deltaTime;
-        if (dayTime > 300f)
+        if (dayTime > 180f)
         {
             Time.timeScale = 0;
             resultUI.SetActive(true);

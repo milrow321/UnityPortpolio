@@ -74,15 +74,32 @@ public class Grocery : MonoBehaviour
 
     public void Purchase()
     {
-        CafeManager.instance.gold -= tatal;
-        CafeManager.instance.goldOutput += tatal;
-        for (int i = 0; i < deliverySlot.Length; i++)
+        if (tatal > CafeManager.instance.gold)
         {
-            inventory.AddItemToInven(deliverySlot[i].item, deliverySlot[i].number);
-            deliverySlot[i].ResetSlot();
-            tatal = 0;
+            confirmText.text = "돈이 부족합니다";
+            if(Input.GetMouseButtonDown(0)) confirmPanel.SetActive(false);
         }
+        else
+        {
 
+            CafeManager.instance.gold -= tatal;
+            CafeManager.instance.goldOutput += tatal;
+            for (int i = 0; i < deliverySlot.Length; i++)
+            {
+                inventory.AddItemToInven(deliverySlot[i].item, deliverySlot[i].number);
+                deliverySlot[i].ResetSlot();
+                tatal = 0;
+            }
+
+            confirmPanel.SetActive(false);
+        }
+    }
+
+    public void CancelOrder()
+    {
+        tatal = 0;
+        
         confirmPanel.SetActive(false);
+        
     }
 }
