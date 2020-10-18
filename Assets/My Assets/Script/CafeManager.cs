@@ -26,10 +26,15 @@ public class CafeManager : MonoBehaviour
     public GameObject pauseShadow;//타임스케일이 0일때 어두워지는 효과
     public GameObject settingUI;//설정창
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
 
-        instance = this;
+       
         gold = 100;
         goldText.text = gold.ToString();
 

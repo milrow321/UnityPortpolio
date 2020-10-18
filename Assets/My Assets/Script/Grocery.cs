@@ -78,6 +78,7 @@ public class Grocery : MonoBehaviour
         {
             confirmText.text = "돈이 부족합니다";
             if(Input.GetMouseButtonDown(0)) confirmPanel.SetActive(false);
+            
         }
         else
         {
@@ -92,6 +93,7 @@ public class Grocery : MonoBehaviour
             }
 
             confirmPanel.SetActive(false);
+            
         }
     }
 

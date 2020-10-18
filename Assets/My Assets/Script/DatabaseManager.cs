@@ -46,6 +46,8 @@ public class DatabaseManager : MonoBehaviour
 
 
         //foodItemDictionary.Add(01000, new Item(01000, "vine", "사과주스", "주스입니다", Item.ItemType.FOOD));
+
+
         foodItemDictionary.Add(01001, new Item(01001,20, "Coffee_128_52", "딸기주스", "딸기를 갈아 만든 주스", Item.ItemType.FOOD));
         foodItemDictionary.Add(01003, new Item(01003,24, "Coffee_128_44", "포도주스","포도를 갈아 만든 주스", Item.ItemType.FOOD));
         foodItemDictionary.Add(01005,new Item(01005,30, "Coffee_128_01","다크커피","가장 베이직한 커피", Item.ItemType.FOOD));

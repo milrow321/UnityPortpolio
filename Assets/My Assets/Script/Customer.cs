@@ -79,10 +79,10 @@ public class Customer : MonoBehaviour
     {
         switch (customerState)
         {
-            case CUSTOMERSTETE.ENTER:
+            case CUSTOMERSTETE.ENTER: //생성후 입장 ~ 착석 전
                 Move();
                 break;
-            case CUSTOMERSTETE.SIT:
+            case CUSTOMERSTETE.SIT: //앉아 있을 때
                 sitTime += Time.deltaTime;
                 if (!isMove && tablePool.table[tableCount].gotMenu && !isOrder)
                 {
@@ -96,7 +96,7 @@ public class Customer : MonoBehaviour
                     customerState = CUSTOMERSTETE.EXIT;
                 }
                 break;
-            case CUSTOMERSTETE.EXIT:
+            case CUSTOMERSTETE.EXIT: // 퇴장시
                  
                 Exit();
                 break;

@@ -86,21 +86,18 @@ public class Kitchen : MonoBehaviour
             for (int i = 0; i < recipeCount; i++)
             {
                 if (recipe[i] == null) continue;
+                //Comparer를 통해 레서피 리스트와 조합 리스트를 비교
                 if ((from tem in mixSlotList select tem).SequenceEqual(recipe[i], new RecipeComparer()))
                 {
                     mixSlotList = recipe[i];
+                    //조합 리스트를 레서피 딕셔너리에 키값으로 제공
                     if (recipeBook.TryGetValue(mixSlotList, out int res))
                     {
                         ServeToCounter(res);
-                        //DatabaseManager.instance.foodItemDictionary.
                         for (int j = 0; j < mixSlotList.Count; j++)
                         {
-
                             inventory.RemoveFromInven(mixSlotList[j], 1);
                         }
-
-
-                        //Debug.Log(res);
                         mixSlotList.Clear();
                         mixSlotList = new List<Item>();
                         for (int j = 0; j < mixSlot.Length; j++)
@@ -108,8 +105,6 @@ public class Kitchen : MonoBehaviour
                             mixSlot[j].DeleteImage();
                             count = 0;
                             RecipeReboot();
-
-
                         }
                     }
                 }

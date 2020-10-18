@@ -17,6 +17,8 @@ public class OrderSlot : MonoBehaviour
 
     private void Start()
     {
+        item = null;
+        
         slotParent = transform.parent.GetComponent<OrderSlotPanel>();
     }
 

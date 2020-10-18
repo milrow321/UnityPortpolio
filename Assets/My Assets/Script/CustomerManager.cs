@@ -148,11 +148,8 @@ public class CustomerManager : MonoBehaviour
             coun2++;
             
         }
-        //tablePool.table[coun].isOccupied=true;
         tablePool.table[coun].setCondition(coun2);
-        
 
-        
     }
 
 
