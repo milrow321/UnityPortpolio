@@ -9,6 +9,9 @@ public class Table : MonoBehaviour
     public bool isOccupied;
 
     [SerializeField]
+    public bool isReserved;
+
+    [SerializeField]
     public bool gotMenu;
 
     [SerializeField]

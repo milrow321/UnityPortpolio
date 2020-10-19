@@ -32,12 +32,16 @@ public class CustomerManager : MonoBehaviour
     float spawnTime;//생성시간을 랜덤하게 할 랜덤 시간
 
     public int createNum;//한번에 생성할 손님 수
-    public int customerNum;
+
+    [SerializeField]
+    public int customerNum;//손님 들어온 순서
 
     private int coun; //테이블 카운트
     private int coun2; //의자카운트
 
     public TablePool tablePool;
+
+    List<Table> tableAvail;
 
     private void Awake()
     {
@@ -47,7 +51,7 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
-
+        tableAvail = new List<Table>();
 
         spawnTime = Random.Range(10, 50);
         customerGroupMax = 4;
@@ -56,6 +60,8 @@ public class CustomerManager : MonoBehaviour
 
         coun = 0;
         coun2 = 0;
+
+        customerNum = 0;
     }
 
 
@@ -63,7 +69,27 @@ public class CustomerManager : MonoBehaviour
     {
         createTime += Time.deltaTime;
 
-        if (createTime >spawnTime)
+        for (int j = 0; j < tablePool.table.Length; j++)
+        {
+            if (tablePool.table[j].isReserved) continue;
+            else
+            {
+                coun = j;
+                break;
+            }
+        }
+        
+
+        for (int i = 0; i < tablePool.table.Length; i++)
+        {
+
+            if (tablePool.table[i].isReserved) tableAvail.Add(tablePool.table[i]);
+            else continue;
+        }
+        count = tableAvail.Count;
+        tableAvail.Clear();
+
+        if (createTime > spawnTime)
         {
             createTime = 0;
             spawnTime = Random.Range(10, 50);
@@ -71,29 +97,59 @@ public class CustomerManager : MonoBehaviour
             {
 
                 SpawnCustomer();
-                coun++;
+
                 coun2 = 0;
 
             }
-        } 
+        }
+
+
+
+
+        //if (Input.GetMouseButtonDown(1))
+        //{
+
+        //    if (count < customerGroupMax)
+        //    {
+
+        //        SpawnCustomer();
+
+
+
+        //    }
+        //}
+
+        coun2 = 0;
+
+
+
+
+
     }
 
     public void SpawnCustomer()
     {
         createNum = Random.Range(1, 5);
+        tablePool.table[coun].isReserved = true;
 
-
+        CafeManager.instance.visitorNum += createNum;
         for (int i = 0; i < createNum; i++)
         {
             int cusNum = Random.Range(0, customer.Length);
             newCus = Instantiate(customer[cusNum], spawner.transform.position, Quaternion.identity);
-            newCus.Find(coun, coun2);
-            newCus.numberTicket = coun * 4 + coun2;
+            
+
+            //newCus.Find(coun, coun2);
+            newCus.tableCount = coun;
+            newCus.chairCount = coun2;
+
+            newCus.numberTicket = customerNum;
+            customerNum++;
             coun2++;
             
         }
-        //tablePool.table[coun].isOccupied=true;
         tablePool.table[coun].setCondition(coun2);
+
     }
 
 

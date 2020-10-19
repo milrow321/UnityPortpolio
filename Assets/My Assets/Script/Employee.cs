@@ -18,7 +18,7 @@ public class Employee : MonoBehaviour
 
 
 
-    
+    bool isReturn;//다시 돌아가는 행동
 
     private int tableCount;
     private int chairCount;
@@ -27,7 +27,7 @@ public class Employee : MonoBehaviour
 
     private Vector3 tableDesPos;
 
-    
+    private Vector3 defaltDir;//기본상태에서 바라보는 방향
 
     
 
@@ -38,6 +38,8 @@ public class Employee : MonoBehaviour
 
     public TablePool tablePool;
 
+    float tempTime;//메뉴전달 함수의 약간 텀을 주기 위함
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,24 +48,32 @@ public class Employee : MonoBehaviour
         //table = tablePool.GetComponentsInChildren<TableSeat>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        tableDesPos = new Vector3(-2, 0, 1);
+        tableDesPos = new Vector3(-2, 0, 2);
 
-        
+        defaltDir = transform.forward;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isReturn) Invoke("BackToCount", 3f); //BackToCount();
+
         for (int i = 0; i < tablePool.table.Length; i++)
         {
-            if (tablePool.table[i].isOccupied&&!tablePool.table[i].gotMenu)
+            
+            if (tablePool.table[i].isOccupied && !tablePool.table[i].gotMenu)
             {
+                tempTime += Time.deltaTime;
                 tableCount = i;
                 //Invoke("PassMenu", 10f);
-
-                PassMenu();
-                break;
+                if (tempTime >= 1.5f)
+                {
+                    PassMenu();
+                    tempTime = 0;
+                    break;
+                }
             }
+            else continue;
         }
 
         for (int i = 0; i < counterSlot.Length; i++)
@@ -76,19 +86,21 @@ public class Employee : MonoBehaviour
                 break;
             }
         }
-       
 
+        
+      
     }
 
     private void Serve(Customer customer)
     {
         
         agent.SetDestination(customer.transform.position);
-        if (Vector3.Distance(transform.position, customer.transform.position) < 2)
+        if (Vector3.Distance(transform.position, customer.transform.position) < 3)
         {
             customer.recieved = true;
-            
-            BackToCount();
+
+            //BackToCount();
+            isReturn = true;
         }
     }
 
@@ -102,7 +114,8 @@ public class Employee : MonoBehaviour
             animator.transform.forward = dir;
             animator.SetBool("isMove", false);
             tablePool.table[tableCount].gotMenu = true;
-            Invoke("BackToCount",3f);
+            //Invoke("BackToCount", 3f);
+            isReturn = true;
         }
     }
 
@@ -111,10 +124,12 @@ public class Employee : MonoBehaviour
         
         animator.SetBool("isMove", true);
         agent.SetDestination(defPos.position);
-        if (Vector3.Distance(defPos.position, transform.position) < 1)
+        if (Vector3.Distance(transform.position, defPos.position) < 1)
         {
             animator.SetBool("isMove", false);
-            agent.ResetPath();
+            agent.transform.forward = defaltDir;
+            isReturn = false;
         }
+        
     }
 }
